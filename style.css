@@ -13,7 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #E6E6FA;
+  background-color: #FFB6C1;
 }
 
 .container {
@@ -37,7 +37,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(3px);
 }
 
 .container .card .content {
