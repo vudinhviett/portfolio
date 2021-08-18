@@ -58,7 +58,7 @@ body {
   position: relative;
   width: 150px;
   height: 150px;
-  border-radius: 50%;
+  border-radius: 40%;
   overflow: hidden;
   border: 10px solid #ff69b421;
   cursor: pointer;
@@ -101,7 +101,7 @@ body {
   transform: translateY(40px);
   transition: 0.2s;
   opacity: 0;
-  transition-delay: calc(0.1s * var(--i));
+  transition-delay: calc(0.01s * var(--i));
 }
 
 .container .card:hover .sci li {
@@ -117,7 +117,7 @@ body {
 .heart {
   width: 50px;
   margin-bottom: 20px;
-  animation: heartBeat 0.1s ease-in-out infinite;
+  animation: heartBeat 0.001s ease-in-out infinite;
 }
 
 @keyframes heartBeat {
