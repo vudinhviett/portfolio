@@ -13,9 +13,64 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  background-color: #FFB6C1;
+  background-color: #D7E9F7;
+}
+.spinner-wrapper {
+	position: fixed;
+	z-index: 999999;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: #D7E9F7;
 }
 
+.spinner {
+	position: absolute;
+	top: 50%; /* centers the loading animation vertically one the screen */
+	left: 50%; /* centers the loading animation horizontally one the screen */
+	width: 3.75rem;
+	height: 1.25rem;
+	margin: -0.625rem 0 0 -1.875rem; /* is width and height divided by two */ 
+	text-align: center;
+}
+
+.spinner > div {
+	display: inline-block;
+	width: 1rem;
+	height: 1rem;
+	border-radius: 100%;
+	background-color: #22577A;
+	-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+	animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+	-webkit-animation-delay: -0.32s;
+	animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+	-webkit-animation-delay: -0.16s;
+	animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+	0%, 80%, 100% { -webkit-transform: scale(0); }
+	40% { -webkit-transform: scale(1.0); }
+}
+
+@keyframes sk-bouncedelay {
+	0%, 80%, 100% { 
+		-webkit-transform: scale(0);
+		-ms-transform: scale(0);
+		transform: scale(0);
+	} 40% { 
+		-webkit-transform: scale(1.0);
+		-ms-transform: scale(1.0);
+		transform: scale(1.0);
+	}
+}
 .container {
   position: relative;
   z-index: 1;
@@ -32,7 +87,7 @@ body {
   height: 400px;
   background: rgba(255, 255, 255, 0.05);
   margin: 20px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.151);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.068);
   border-radius: 15px;
   display: flex;
   justify-content: center;
@@ -58,9 +113,9 @@ body {
   position: relative;
   width: 150px;
   height: 150px;
-  border-radius: 40%;
+  border-radius: 50%;
   overflow: hidden;
-  border: 10px solid #ff69b421;
+  border: 10px solid #38a3a517;
   cursor: pointer;
 }
 
