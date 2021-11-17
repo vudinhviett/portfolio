@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="Slide của Vu Viet" />
+  <meta property="og:description"
+  content="Slide của Vu Viettttttttttttt" />
+  <meta property="og:image" content="https://tkb.vuviet.tk/ogimg.jpg" />
+  <link rel="stylesheet" href="css/style.css">
+  
+  <link rel="shortcut icon" href="//tkb.vuviet.tk/favicon.png" type="image/x-icon">
+  <title>Slide của Vu Viet</title>
+  <style>
+    body {
+      background-color: #e4eaff;
+    }
+
+    .slide-top {
+      padding-top: 50px;
+    }
+    .project{
+      margin-bottom: 3rem;
+    }
+    .edu-education-item {
+      margin: auto;
+      transition: ease-in-out 0.2s;
+    }
+    .edu-education-item:hover{
+      transition: ease-in-out 0.2s;
+      background-color: rgb(233, 233, 233);
+    }
+
+    .education-item-title {
+      margin-top: 0.3rem;
+    }
+    .project{
+      margin-top: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="edu-box container slide-top">
+    <div class="edu-title title-intro">Slide</div>
+    <div class="edu-education">
+      <div class="edu-education-content">
+        <a href="https://docs.google.com/presentation/d/1iFvXxOrQZgEfFV4IG2Hs0fp50A6_hQKt7KvltypJ5Ok/edit?usp=sharing">
+        <div class="edu-education-item">
+          <div class="education-item-time"><span>Hoá</span></div>
+          <h3 class="education-item-title">Bài 8: Amoniac và muối amoni</h3>
+          <p class="education-item-desc">Nhóm 1</p>
+        </div>
+      </a>
+      </div>
+      <div class="edu-education-content">
+        <a href="https://docs.google.com/presentation/d/1iGIB36f4Tlk3tvKmtaWCUAABjCq9VWn8/edit?usp=sharing&ouid=116283181403567974180&rtpof=true&sd=true">
+        <div class="edu-education-item">
+          <div class="education-item-time"><span>Hoá</span></div>
+          <h3 class="education-item-title">Bài 20: Mở đầu về hoá học hữu cơ</h3>
+          <p class="education-item-desc">Nhóm 4</p>
+        </div>
+      </a>
+      </div>
+    </div>
+  </div>
+  <section class="project" id="project">
+    <div class="project-box container">
+      <div class="project-title title-intro">Lịch học và ID</div>
+      <ul class="project-list"><a rel="dofollow" href="https://tkb.vuviet.tk" target="_blank" id="vid"
+          class="project-item"><video playsinline="" autoplay="" muted="" loop="">
+            <source src="video/video.mp4" type="video/mp4">
+          </video>
+        </a></ul>
+    </div>
+  </section>
+  <p style="text-align: center;margin-bottom: 15px;">Create by <a href="https://vuviet.tk">Vu Viet</p>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQ17ZXBBGW"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+   gtag('config', 'G-MQ17ZXBBGW');
+  </script>
+  <script>
+    window.onload = function () {
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    }, false);
+    document.addEventListener("keydown", function (e) {
+        //document.onkeydown = function(e) {
+        // "I" key
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+            disabledEvent(e);
+        }
+        // "J" key
+        if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+            disabledEvent(e);
+        }
+        // "S" key + macOS
+        if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+            disabledEvent(e);
+        }
+        // "U" key
+        if (e.ctrlKey && e.keyCode == 85) {
+            disabledEvent(e);
+        }
+        // "F12" key
+        if (event.keyCode == 123) {
+            disabledEvent(e);
+        }
+    }, false);
+
+    function disabledEvent(e) {
+        if (e.stopPropagation) {
+            e.stopPropagation();
+        } else if (window.event) {
+            window.event.cancelBubble = true;
+        }
+        e.preventDefault();
+        return false;
+    }
+};
+  </script>
+</body>
+
+</html>
