@@ -1,0 +1,30 @@
+*{
+    box-sizing:content-box;
+    text-decoration: none;
+}
+body{
+    background-color: white;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.text{
+    color:#009cd7;
+}
+.textt{
+    color:#009cd7;
+    text-align: center;
+}
+
+.column{
+    width: 25%;
+    text-align: justify;
+    float: left;
+    margin: 60px 55px;
+}
+.nav-bar{
+    display: flex;
+    background-color:mintcream;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    color: #009cd7;
+}

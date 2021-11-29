@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sau buổi 8</title>
+</head>
+<body>
+    <h2>THỜI KHOÁ BIỂU</h2>
+    <h3>Buổi sáng:</h3>
+    <table border="1">
+        <tr>
+            <th>Thời gian</th>
+            <th>Thứ 2</th>
+            <th>Thứ 3</th>
+            <th>Thứ 4</th>
+            <th>Thứ 5</th>
+            <th>Thứ 6</th>
+            <th>Thứ 7</th>
+        </tr>
+        <tr>
+            <td>7h15-7h50</td>
+            <td>Chào cờ</td>
+            <td>Tiếng Việt</td>
+            <td>Tiếng Việt</td>
+            <td>Toán</td>
+            <td>Âm nhạc</td>
+            <td rowspan="5">Nghỉ</td>
+        </tr>
+        <tr>
+            <td>7h55-8h30</td>
+            <td>Tiếng Việt</td>
+            <td>Tiếng Việt</td>
+            <td>Tiếng Việt</td>
+            <td>Thể dục</td>
+            <td>Tiếng Việt</td>
+        </tr>
+        <tr>
+            <td>8h30-8h50</td>
+            <td colspan="5">RA CHƠI</td>
+        </tr>
+        <tr>
+            <td>8h50-9h25</td>
+            <td>Tiếng Việt</td>
+            <td>Mỹ thuật</td>
+            <td>Toán</td>
+            <td>Tiếng Việt</td>
+            <td>Tiếng Việt</td>
+        </tr>
+        <tr>
+            <td>9h30-10h05</td>
+            <td>Toán</td>
+            <td>Toán</td>
+            <td>Thủ công</td>
+            <td>Tiếng Việt</td>
+            <td>HĐNGLL</td>
+        </tr>
+    </table>
+    <h3>Buổi chiều:</h3>
+    <table border="1" style="margin-bottom: 100px;">
+        <tr>
+            <th>Thời gian</th>
+            <th>Thứ 2</th>
+            <th>Thứ 3</th>
+            <th>Thứ 4</th>
+            <th>Thứ 5</th>
+            <th>Thứ 6</th>
+            <th>Thứ 7</th>
+        </tr>
+        <tr>
+            <td>13h45-14h20</td>
+            <td>Rèn TV</td>
+            <td>Rèn toán</td>
+            <td>Rèn TV</td>
+            <td>Rèn toán</td>
+            <td>Tiếng anh</td>
+            <td rowspan="5">Nghỉ</td>
+        </tr>
+        <tr>
+            <td>14h25-15h00</td>
+            <td>Rèn TV</td>
+            <td>Rèn toán</td>
+            <td>Rèn TV</td>
+            <td>Rèn toán</td>
+            <td>Tiếng anh</td>
+        </tr>
+        <tr>
+            <td>15h00-15h25</td>
+            <td colspan="5">RA CHƠI</td>
+        </tr>
+        <tr>
+            <td>15h20-16h00</td>
+            <td>AEROBIC</td>
+            <td>Rèn chữ đẹp</td>
+            <td>Rèn KNS</td>
+            <td>Rèn chữ đẹp</td>
+            <td>SHL</td>
+        </tr>
+    </table>
+    <h3>Form:</h3>
+    <form action="#" method="GET">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required><br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br>
+        <label for="website">Website:</label>
+        <input type="text" id="website"><br>
+        <label for="comment">Comment:</label>
+        <input type="text" id="comment" style="padding: 0px 40px 50px 0px;"><br>
+        <label for="gender">Gender:</label>
+        <input type="radio" name="gender" checked id="female">Female
+        <input type="radio" name="gender" id="male">Male
+        <input type="radio" name="gender" id="other">Other<br>
+        <input type="button" value="Submit" style="margin-top: 5px" id="subMitTag" onclick="send()">
+    </form>
+    <script src="./index.js"></script>
+</body>
+</html>

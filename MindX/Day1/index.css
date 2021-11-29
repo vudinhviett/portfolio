@@ -1,0 +1,35 @@
+h1{
+    text-align: center;
+    color:rgb(0, 153, 204);
+    /* Thuộc tính boder */
+    border-style: hidden;
+    font-size: xx-large;
+}
+p{
+    text-align: center;
+    font-size: large;
+}
+img{
+    width: 50px;
+    height: 50px;
+}
+h2{
+    text-align: center;
+    color:rgb(0, 153, 204) ;
+    font-size: x-large;
+}
+/* Background */
+
+body{
+    background-image: url(./image/Abstract-Envelope.svg);
+    background-position:top;
+}
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    margin-bottom: 40px;
+    width: 120px;
+    height: 120px;
+}
