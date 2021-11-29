@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+*{
+	font-family: 'Noto Sans', sans-serif;
+    text-decoration: none;
+    text-align: center;
+	box-sizing: border-box;
+	font-weight: unset;
+}
+body{
+    background-color: #C7D1F6;
+}
+a{
+	color: #757575;
+	transition: 0.2s;
+}
+a:hover{
+	color: #7278D1;
+	transition: 0.2s;
+}
+table{
+    margin: auto;
+    color: #808080;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 1px 2px 1px rgb(0 0 0 / 1%), 0 2px 3px 2px rgb(0 0 0 / 2%), 0 4px 15px 4px rgb(0 0 0 / 6%);
+}
+td{
+	width: 160px;
+	height: 70px;
+	font-size: 18px;
+	overflow: hidden;
+	border-style: none;
+	background-color: white;
+}
+.first{
+	background-color: #7278D1;
+	color: white;
+	height: 50px;
+	font-size: 18px;
+}
+.text{
+	color: #757575;
+	font-family: 'Quicksand', sans-serif;
+}
+@media only screen and (max-width: 700px){
+	td{
+		width: 160px;
+		height: 70px;
+		font-size: 13px;
+		overflow: hidden;
+		border-style: none;
+		background-color: white;
+	}
+	.first{
+		background-color: #7278D1;
+		color: white;
+		height: 50px;
+		font-size: 15px;
+	}
+	#chieu{
+		margin-bottom: 30px;
+	}
+	
+}
+.copy-click{
+	color: #808080;
+	transition: 0.2s;
+}
+.copy-click:hover{
+	color: #7278D1;
+	transition:ease-in-out 0.2s;
+}
+@media only screen and (min-width: 800px){
+.id{
+	width: 600px;
+}
+}
+.id.first, .id.copy-click{
+	font-size: 19px;
+}
+@media (prefers-color-scheme: dark){
+	.text{
+		color: #eee;
+		font-family: 'Quicksand', sans-serif;
+	}
+	#text2{
+		color: #808080;
+	}
+	body{
+		background-color: #18191A;
+	}
+	table{
+		color: #808080;
+		
+	}
+	td{
+		background-color:  #242526;
+	}
+	.first{
+		background-color: #3c3e6d;
+		color: white;
+	}
+}
