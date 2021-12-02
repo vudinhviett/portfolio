@@ -636,6 +636,7 @@ input[type=submit]{
     .contact-form input{
         background-color: #423F3E;
         border: none;
+        color: #EEEEEE;
     }
     .project-item {
         border: 1rem solid #423F3E;
