@@ -567,7 +567,9 @@ p {
     border: 1px solid #ccc;
     transition: all 0.2s linear;
 }
-
+input[type=submit]{
+    background-color: rgba(86, 141, 229, 1);
+}
 .contact-form input[type=submit] {
     border: 0;
 }
@@ -619,4 +621,38 @@ p {
 *::-webkit-input-placeholder {
     color: #504e70;
     font-weight: 500;
+}
+@media (prefers-color-scheme: dark){
+    body{
+        background-color: #2B2B2B;
+    }
+    h1, h2, h3, p, .title-intro, span , .skill-item-name, .education-item-time i ,.education-item-time span, #transaction-count, .fa-bars:before, .fa-times-circle, .navbar-list span{
+        color: #EEEEEE;
+    }
+    .edu-education-item, .home-content, .home-avatar, .navbar-list, .navbar-item i{
+        background-color: #423F3E;
+        border: #423F3E;
+    }
+    .contact-form input{
+        background-color: #423F3E;
+        border: none;
+    }
+    .project-item {
+        border: 1rem solid #423F3E;
+    }
+    ::placeholder {
+        color: #EEEEEE;
+    }
+    input[type=submit]{
+        background-color: rgba(86, 141, 229, 1);
+    }
+    html::-webkit-scrollbar-track {
+        background-color: #423F3E;
+    }
+    html::-webkit-scrollbar-thumb {
+        height: 10rem;
+        background-color: #ccc;
+        border: 3px solid #423F3E;
+        border-radius: 6px;
+    }
 }
