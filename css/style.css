@@ -398,18 +398,20 @@ p {
     background-color: #e3e3e3;
     position: relative;
     border-radius: 1rem;
+    overflow: hidden;
 }
 
 .skill-item-bars {
+    width: 0;
     position: absolute;
     top: 0;
-    left: 0;
+    left: -200px;
     height: 100%;
     background-color: rgba(86, 141, 229, 1);
     border-radius: 1rem;
-    transition: 0.5s;
+    transform: translateX(200px);
+    transition: 1s;
 }
-
 .education-item-time i {
     font-size: 1.8rem;
     color: #504e70;
