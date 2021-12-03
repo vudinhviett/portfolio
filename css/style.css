@@ -355,6 +355,10 @@ p {
 }
 
 @media screen and (max-width: 767px) {
+    .home-content{
+        
+    padding: 30px 70px 50px 70px;
+    }
     .edu-name {
         font-size: 1.6rem;
     }
@@ -410,7 +414,8 @@ p {
     background-color: rgba(86, 141, 229, 1);
     border-radius: 1rem;
     transform: translateX(200px);
-    transition: 1s;
+    -webkit-transition: 1s;
+    -webkit-transform: translateX(200px);
 }
 .education-item-time i {
     font-size: 1.8rem;
