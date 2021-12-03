@@ -39,9 +39,6 @@ body {
     -moz-user-select: none !important;
     -ms-user-select: none !important;
     user-select: none !important;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
 }
 
 a {
@@ -567,9 +564,11 @@ p {
     padding: 1.5rem 2.5rem;
     border-radius: 3rem;
     outline: none;
-    border: none;
-    background-color: #eee;
+    border: 1px solid #ccc;
     transition: all 0.2s linear;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 input[type=submit] {
