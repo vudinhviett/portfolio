@@ -595,6 +595,7 @@ input[type=submit] {
     padding: 1.5rem;
     color: #ffff;
     font-weight: 500;
+    margin-top: 3rem;
 }
 
 @media screen and (max-width: 767px) {
