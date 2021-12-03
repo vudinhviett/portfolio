@@ -630,7 +630,7 @@ input[type=submit] {
 }
 
 @media (prefers-color-scheme: dark) {
-    body {
+    body, .skill-item-progress {
         background-color: #2B2B2B;
     }
 
