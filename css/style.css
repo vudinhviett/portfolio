@@ -414,7 +414,8 @@ p {
     background-color: rgba(86, 141, 229, 1);
     border-radius: 1rem;
     transform: translateX(200px);
-    -webkit-transition: 1s;
+    transition: 2s;
+    -webkit-transition: 2s;
     -webkit-transform: translateX(200px);
 }
 .education-item-time i {
