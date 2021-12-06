@@ -414,8 +414,8 @@ p {
     background-color: rgba(86, 141, 229, 1);
     border-radius: 1rem;
     transform: translateX(200px);
-    transition: 2s;
-    -webkit-transition: 2s;
+    transition: 5s;
+    -webkit-transition: 5s;
     -webkit-transform: translateX(200px);
 }
 .education-item-time i {
@@ -678,5 +678,12 @@ input[type=submit] {
         background-color: #ccc;
         border: 3px solid #423F3E;
         border-radius: 6px;
+    }
+    /* Messenger theme */
+    ._9pmv, ._a2zy, ._9ptk{
+        background-color: #423f3e;
+    }
+    ._a2zr, ._a2zt, ._a1ql, ._9ptm{
+        color: #eee;
     }
 }

@@ -47,7 +47,7 @@ table{
 td{
 	width: 160px;
 	height: 70px;
-	font-size: 18px;
+	font-size: 16px;
 	overflow: hidden;
 	border-style: none;
 	background-color: white;
@@ -90,7 +90,7 @@ td{
 	color: #7278D1;
 	transition:ease-in-out 0.2s;
 }
-@media only screen and (min-width: 800px){
+@media only screen and (min-width: 900px){
 .id{
 	width: 600px;
 }
@@ -104,20 +104,32 @@ td{
 		font-family: 'Quicksand', sans-serif;
 	}
 	#text2{
-		color: #808080;
+		color: #eee;
 	}
 	body{
 		background-color: #2B2B2B;
 	}
 	table{
-		color: #808080;
-		
+		color: #eee;
+	}
+	.copy-click{
+		color: #eee;
 	}
 	td{
 		background-color:  #423F3E;
 	}
 	.first{
 		background-color: rgb(64 ,104, 169);
-		color: white;
+		color: #eee;
 	}
+	html::-webkit-scrollbar-track {
+        background-color: #423F3E;
+    }
+
+    html::-webkit-scrollbar-thumb {
+        height: 10rem;
+        background-color: #ccc;
+        border: 3px solid #423F3E;
+        border-radius: 6px;
+    }
 }
