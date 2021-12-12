@@ -57,6 +57,12 @@ p {
     color: #504e70;
 }
 
+img {
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+  }
+
 .container {
     max-width: 1130px;
     padding: 0 1.5rem;

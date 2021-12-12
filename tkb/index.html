@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Lịch học và ID" />
-    <meta property="og:description"
-    content="Trang web chứa lịch học chi tiết và ID học Zoom" />
+    <meta property="og:description" content="Trang web chứa lịch học chi tiết và ID học Zoom" />
     <meta property="og:image" content="https://vuviet.tk/tkb/ogimg.jpg" />
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <title>Lịch học và ID - Vu Viet</title>
 </head>
+
 <body>
     <h1 class="text">LỊCH HỌC</h1>
     <h5 id="text2" class="text">Cập nhập lúc 13:20 ngày 09/12</h5>
@@ -162,7 +163,7 @@
     </table>
     <h1 class="text">ID</h1>
     <table class="id" border="0" cellspacing="0" cellpadding="0">
-  <tr class="first">
+        <tr class="first">
             <th>Môn</th>
             <th>ID</th>
             <th>Pass</th>
@@ -262,75 +263,157 @@
     <h5 id="text2" class="text">Create by <a href="https://vuviet.tk">Vu Viet</a></h5>
     <script>const links = document.querySelectorAll('.copy-click');
         const copyToClipboard = str => {
-          const el = document.createElement('input');
-          str.dataset.copyString ? el.value = str.dataset.copyString : el.value = str.text;
-          el.setAttribute('readonly', '');
-          el.style.position = 'absolute';
-          el.style.opacity = 0;
-          document.body.appendChild(el);
-          el.select();
-          document.execCommand('copy');
-          document.body.removeChild(el);
+            const el = document.createElement('input');
+            str.dataset.copyString ? el.value = str.dataset.copyString : el.value = str.text;
+            el.setAttribute('readonly', '');
+            el.style.position = 'absolute';
+            el.style.opacity = 0;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
         };
-    
+
         const clickInteraction = e => {
-          e.preventDefault();
-          copyToClipboard(e.target);
+            e.preventDefault();
+            copyToClipboard(e.target);
         };
-    
+
         Array.from(links).forEach(link => {
-          link.addEventListener('click', e => clickInteraction(e));
-          link.addEventListener('keypress', e => {
-            if (e.keyCode === 13) clickInteraction(e);
-          });
+            link.addEventListener('click', e => clickInteraction(e));
+            link.addEventListener('keypress', e => {
+                if (e.keyCode === 13) clickInteraction(e);
+            });
         });
-      </script>
+    </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQ17ZXBBGW"></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
-     gtag('config', 'G-MQ17ZXBBGW');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-MQ17ZXBBGW');
     </script>
-      <script>
+    <script>
         window.onload = function () {
-        document.addEventListener("contextmenu", function (e) {
-            e.preventDefault();
-        }, false);
-        document.addEventListener("keydown", function (e) {
-            //document.onkeydown = function(e) {
-            // "I" key
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
-                disabledEvent(e);
+            document.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+            }, false);
+            document.addEventListener("keydown", function (e) {
+                //document.onkeydown = function(e) {
+                // "I" key
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+                    disabledEvent(e);
+                }
+                // "J" key
+                if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                    disabledEvent(e);
+                }
+                // "S" key + macOS
+                if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+                    disabledEvent(e);
+                }
+                // "U" key
+                if (e.ctrlKey && e.keyCode == 85) {
+                    disabledEvent(e);
+                }
+                // "F12" key
+                if (event.keyCode == 123) {
+                    disabledEvent(e);
+                }
+            }, false);
+
+            function disabledEvent(e) {
+                if (e.stopPropagation) {
+                    e.stopPropagation();
+                } else if (window.event) {
+                    window.event.cancelBubble = true;
+                }
+                e.preventDefault();
+                return false;
             }
-            // "J" key
-            if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
-                disabledEvent(e);
+        };
+    </script>
+    <script>
+
+        !function() {
+          function detectDevTool(allow) {
+            if(isNaN(+allow)) allow = 100;
+            var start = +new Date(); // Validation of built-in Object tamper prevention.
+            debugger;
+            var end = +new Date(); // Validates too.
+            if(isNaN(start) || isNaN(end) || end - start > allow) {
+              // input your code here when devtools detected.
             }
-            // "S" key + macOS
-            if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
-                disabledEvent(e);
+          }
+          if(window.attachEvent) {
+            if (document.readyState === "complete" || document.readyState === "interactive") {
+                detectDevTool();
+              window.attachEvent('onresize', detectDevTool);
+              window.attachEvent('onmousemove', detectDevTool);
+              window.attachEvent('onfocus', detectDevTool);
+              window.attachEvent('onblur', detectDevTool);
+            } else {
+                setTimeout(argument.callee, 0);
             }
-            // "U" key
-            if (e.ctrlKey && e.keyCode == 85) {
-                disabledEvent(e);
+          } else {
+            window.addEventListener('load', detectDevTool);
+            window.addEventListener('resize', detectDevTool);
+            window.addEventListener('mousemove', detectDevTool);
+            window.addEventListener('focus', detectDevTool);
+            window.addEventListener('blur', detectDevTool);
+          }
+        }();
+
+        const devtools = {
+            isOpen: false,
+            orientation: undefined,
+        };
+
+        const threshold = 160;
+
+        const emitEvent = (isOpen, orientation) => {
+            globalThis.dispatchEvent(new globalThis.CustomEvent('devtoolschange', {
+                detail: {
+                    isOpen,
+                    orientation,
+                },
+            }));
+        };
+
+        const main = ({ emitEvents = true } = {}) => {
+            const widthThreshold = globalThis.outerWidth - globalThis.innerWidth > threshold;
+            const heightThreshold = globalThis.outerHeight - globalThis.innerHeight > threshold;
+            const orientation = widthThreshold ? 'vertical' : 'horizontal';
+
+            if (
+                !(heightThreshold && widthThreshold)
+                && ((globalThis.Firebug && globalThis.Firebug.chrome && globalThis.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)
+            ) {
+                if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
+                    emitEvent(true, orientation);
+                }
+
+                devtools.isOpen = true;
+                devtools.orientation = orientation;
+            } else {
+                if (devtools.isOpen && emitEvents) {
+                    emitEvent(false, undefined);
+                }
+
+                devtools.isOpen = false;
+                devtools.orientation = undefined;
             }
-            // "F12" key
-            if (event.keyCode == 123) {
-                disabledEvent(e);
-            }
-        }, false);
-    
-        function disabledEvent(e) {
-            if (e.stopPropagation) {
-                e.stopPropagation();
-            } else if (window.event) {
-                window.event.cancelBubble = true;
-            }
-            e.preventDefault();
-            return false;
-        }
-    };
-      </script>
+        };
+
+        main({ emitEvents: false });
+        setInterval(main, 500);
+
+        // Get notified when it's opened/closed or orientation changes
+        window.addEventListener('devtoolschange', event => {
+            console.clear();
+            document.write(' ')
+        });
+    </script>
 </body>
+
 </html>
