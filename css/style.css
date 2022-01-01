@@ -652,9 +652,14 @@ input[type=submit] {
         color: #EEEEEE;
     }
 
-    .edu-education-item, .home-content, .home-avatar, .navbar-list, .navbar-item i {
+    .edu-education-item, .home-content, .home-avatar, .navbar-item i {
         background-color: #423F3E;
         border: #423F3E;
+    }
+    @media screen and (max-width: 767px){
+        .navbar-list{
+            background-color: #423F3E;
+        }
     }
 
     .contact-form input {
