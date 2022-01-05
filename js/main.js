@@ -60,7 +60,7 @@ function animateNumber(finalNumber, duration = 5000, startNumber = 0, callback) 
     }
 }
 document.addEventListener('DOMContentLoaded', function () {
-    animateNumber(29000, 1000, 0, function (number) {
+    animateNumber(30000, 1000, 0, function (number) {
         const formattedNumber = number.toLocaleString()
         document.getElementById('transaction-count').innerText = formattedNumber
     })
