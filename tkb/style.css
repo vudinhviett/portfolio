@@ -19,7 +19,7 @@ html::-webkit-scrollbar {
 html::-webkit-scrollbar-thumb {
     height: 10rem;
     background-color: #ccc;
-    border: 3px solid white;
+    border: 2px solid white;
     border-radius: 6px;
 }
 
@@ -66,7 +66,7 @@ td{
 	td{
 		width: 160px;
 		height: 70px;
-		font-size: 13px;
+		font-size: 10px;
 		overflow: hidden;
 		border-style: none;
 		background-color: white;
@@ -74,7 +74,7 @@ td{
 	.first{
 		color: white;
 		height: 50px;
-		font-size: 15px;
+		font-size: 13px;
 	}
 	#chieu{
 		margin-bottom: 30px;
@@ -83,11 +83,11 @@ td{
 }
 .copy-click{
 	color: #808080;
-	transition: 0.2s;
+	transition: 0.1s;
 }
 .copy-click:hover{
 	color: #7278D1;
-	transition:ease-in-out 0.2s;
+	transition:ease-in-out 0.1s;
 }
 @media only screen and (min-width: 900px){
 .id{
@@ -128,7 +128,7 @@ td{
     html::-webkit-scrollbar-thumb {
         height: 10rem;
         background-color: #ccc;
-        border: 3px solid #423F3E;
+        border: 2px solid #423F3E;
         border-radius: 6px;
     }
 }
