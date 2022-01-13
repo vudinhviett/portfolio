@@ -36,7 +36,7 @@
             <p style="display: none;">vudinhviett, vudinhviet</p>
             <p>Web Developer</p>
             <p class="home-title" style="font-weight: bold;">Follower</p>
-            <div id="transaction-count">34.000</div>
+            <div id="transaction-count">35.000</div>
           </div>
           <div class="home-social"><a rel="dofollow" target="_blank" href="https://vuviet.tk/fb"
               class="home-social-icon"><i class="fab fa-facebook-f"></i></a><a rel="dofollow" target="_blank"
@@ -121,11 +121,14 @@
             <p>Ha Noi, Viet Nam</p>
           </li>
         </ul>
-        <form class="contact-form" action="https://formspree.io/f/mrgrwzvw" target="_self" method="POST"><input
-            type="input" class="contact-form-subject" placeholder="Name" required name="Name" /><input type="input"
-            class="contact-form-subject" placeholder="Email" required name="Email" /><input type="input"
-            name="Your message" placeholder="Your message" class="contact-form-message" required></input><input
-            type="submit" class="contact-form-submit" value="Send Message" /></form>
+        <form class="contact-form"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSfQFv1yuuCD-2YEgALIuh8FHgDrAYQ5wC3oKCVZouOPLhttMw/formResponse"
+          target="_self" method="POST">
+          <input type="input" class="contact-form-subject" placeholder="Name" required name="entry.971552718" />
+          <input type="input" class="contact-form-subject" placeholder="Email" required name="entry.1461111679" />
+          <input type="input" name="entry.948143023" placeholder="Your message" class="contact-form-message" required>
+          <input type="submit" class="contact-form-submit" value="Send Message" />
+        </form>
       </div>
     </section>
   </main>
@@ -147,14 +150,14 @@
 
   <!-- Your SDK code -->
   <script>
-    window.fbAsyncInit = function() {
+    window.fbAsyncInit = function () {
       FB.init({
-        xfbml            : true,
-        version          : 'v12.0'
+        xfbml: true,
+        version: 'v12.0'
       });
     };
 
-    (function(d, s, id) {
+    (function (d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
