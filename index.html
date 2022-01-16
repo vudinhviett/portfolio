@@ -16,6 +16,7 @@
   <meta http-equiv='expires' content='0'>
   <meta http-equiv='pragma' content='no-cache'>
   <title>Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body><i class="fas fa-bars navbar-icon"></i>
@@ -27,7 +28,7 @@
         href="#contact" class="navbar-item"><i class="fas fa-comments"></i><span>Contact</span></a></div>
   </nav>
   <main>
-    <section class="home" id="home">
+    <section class="home animate__animated animate__fadeInUp" id="home">
       <div class="home-box container">
         <div class="home-content">
           <div class="home-avatar"><img src="img/avatar.jpg" alt="" /></div>
@@ -36,7 +37,7 @@
             <p style="display: none;">vudinhviett, vudinhviet</p>
             <p>Web Developer</p>
             <p class="home-title" style="font-weight: bold;">Follower</p>
-            <div id="transaction-count">35.000</div>
+            <div id="transaction-count">36.000</div>
           </div>
           <div class="home-social"><a rel="dofollow" target="_blank" href="https://vuviet.tk/fb"
               class="home-social-icon"><i class="fab fa-facebook-f"></i></a><a rel="dofollow" target="_blank"
@@ -122,16 +123,17 @@
           </li>
         </ul>
         <form class="contact-form"
-          action="https://docs.google.com/forms/d/e/1FAIpQLSfQFv1yuuCD-2YEgALIuh8FHgDrAYQ5wC3oKCVZouOPLhttMw/formResponse"
-          target="_blank" method="POST">
-          <input type="input" class="contact-form-subject" placeholder="Name" required name="entry.971552718" />
-          <input type="input" class="contact-form-subject" placeholder="Email" required name="entry.1461111679" />
-          <input type="input" name="entry.948143023" placeholder="Your message" class="contact-form-message" required>
+          action="https://formcarry.com/s/MwOIjsmoym0"
+          target="hidden-iframe" onsubmit="alert('Minh da nhan duoc thong tin cua ban goi nek');setTimeout(function(){ window.location.reload(); }, 1000)" method="POST">
+          <input type="input" class="contact-form-subject" placeholder="Name" required name="Name" />
+          <input type="input" class="contact-form-subject" placeholder="Email" required name="Email" />
+          <input type="input" name="Your message" placeholder="Your message" class="contact-form-message" required>
           <input type="submit" class="contact-form-submit" value="Send Message" />
         </form>
       </div>
     </section>
   </main>
+  <iframe name="hidden-iframe" style="display: none;"></iframe>
   <script src="js/main.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJ6MM9819B"></script>
   <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-VJ6MM9819B');</script>
