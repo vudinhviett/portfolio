@@ -415,15 +415,23 @@ img {
     width: 0;
     position: absolute;
     top: 0;
-    left: -200px;
     height: 100%;
     background-color: rgba(86, 141, 229, 1);
     border-radius: 1rem;
-    transform: translateX(200px);
-    transition: 5s;
-    -webkit-transition: 5s;
-    -webkit-transform: translateX(200px);
+    animation: skill ease 2s;
 }
+
+@keyframes skill{
+    0%{
+        transform: translateX(-200px);
+        -webkit-transform: translateX(-200px);
+    }
+    100%{
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+    }
+}
+
 .education-item-time i {
     font-size: 1.8rem;
     color: #504e70;
