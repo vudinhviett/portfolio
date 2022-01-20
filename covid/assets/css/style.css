@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+*{
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+    background-color: #21252a;
+    font-size: 17px;
+    color: #fff;
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+html::-webkit-scrollbar-thumb {
+    height: 10rem;
+    background-color: #3b3f44;
+    border: 3px solid #21252a;
+    border-radius: 6px;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: #21252a;
+}
+a:-webkit-any-link {
+    text-decoration: none;
+}
+
+.main {
+    width: 1270px;
+    margin: auto;
+    background-color: #21252a;
+}
+a{
+    color: #fff;
+    transition: .3s;
+}
+a:hover{
+    color: #fd5e53;
+    transition: .3s;
+}
+.pd {
+    padding: 30px;
+}
+.font-h{
+    font-size: 22px;
+    word-spacing: 3px;
+}
+.font-w{
+    font-weight: 600;
+}
+.text {
+    color: #b2b3b4;
+}
+
+/* Nav */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+    height: 63px;
+    background-color: #272b2f;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 3%);border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+nav img {
+    width: 35px;
+}
+nav #logo {
+    display: flex;
+    align-items: center;
+    margin-right: calc(100% - 45%);
+}
+
+nav  #logo-text > #red {
+    color: #fd5e53;
+}
+nav  #logo-text {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-left: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 0;
+}
+nav li {
+    list-style-type: none;
+    color: #fff;
+    margin-left: 15px;
+    float: right;
+}
+
+/* Dashboard */
+.dashboard {
+    position: relative;
+}
+.dashboard h1{
+    position: absolute;
+}
+.dashboard #update {
+    float: right;
+    position: absolute;
+    right: 20px;
+    top: 50px;
+}
+.box{
+    background-color: #272b2f;
+    border-radius: 24px;
+    padding: 30px;
+}
+.box1{
+    margin-top: 100px;
+}
+
+.box1 .row{
+    display: inline-block;
+    width: calc((100% / 5) - 3px);
+    padding: 20px;
+    border-left: 1px dashed #3b3f44;
+    height: 150px;
+}
+.box1 .row > span {
+    display: flex;
+    line-height: 1.4;
+}
+.box1 .row .row-r {
+    float: right;
+    margin-top: -42px;
+}
+.box1 .row .row-r.num {
+    margin-top: -46.5px;
+}
+
+.big-num {
+    font-size: 32px;
+    font-weight: 800;
+}
+.box1 #cases .num{
+    color: #21bf73;
+}
+.now, .new {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 13px;
+}
+.box1 #deaths .num{
+    color: #f84435;
+}
+.box1 #recovered .num{
+    color: #0779e4;
+}
+.box1 #first-vacxin .num{
+    color: #05dfd7;
+}
+.box1 #second-vacxin .num{
+    color: #feb72b;
+}
+.box2 {
+    padding: 30px;
+}
+.box2 .new {
+    background: #24282c;
+    border-radius: 15px;
+    padding: 25px;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.box2 .title {
+    margin-top: 15px;
+    margin-bottom: 0;
+    margin-left: 25px;
+    font-weight: 600;
+    font-size: 23px;
+    color: #fff;
+    padding-right: 100px;
+    word-spacing: 2px;
+}
+.box2 img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+.box2 .content {
+    margin-top: 0;
+    text-align: justify;
+    margin-left: 25px;
+    padding-right: 100px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes modal {
+    0% {
+        transform: translateY(-140px);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.modal.open {
+    display: flex;
+}
+.modal-container {
+    background: #fff;
+    width: 80vw;
+    max-width: 1200px;
+    height: 80vh;
+    border-radius: 15px;
+    animation: modal ease .6s;
+}
+.modal-container iframe {
+    width: 100%;
+    height: 73.5vh;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: none;
+}
+.modal-container button {
+    font-size: 18px;
+    font-weight: 700;
+    float: right;
+    padding: 15px 15px 10px;
+    border: none;
+    transition: 0.2s;
+    border-top-right-radius: 15px;
+    color: #b2b3b4;
+}
+.modal-container button:hover {
+    background: #fd5e53;
+    color: #fff;
+    transition: 0.2s;
+}

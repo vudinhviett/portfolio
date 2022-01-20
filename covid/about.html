@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Giới thiệu</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="shortcut icon" href="./assets/img/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        .contact-form input {
+            width: 700px;
+            font-size: 1.2rem;
+            padding: 1rem 1.5rem;
+            border-radius: 3rem;
+            outline: #111 1px;
+            color: #fff;
+            border: 1px solid #111;
+            background-color: #21252a;
+            transition: all 0.2s linear;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        .contact-form input:hover{
+            outline: #fd5e53 solid 2px;
+        }
+
+        input[type=submit] {
+            background-color: #fd5e53;
+        }
+
+        .contact-form input[type=submit] {
+            border: 0;
+        }
+
+        .contact-form input:hover {
+            box-shadow: 0 1px 2px 1px rgb(86 141 229 / 0.3%), 0 3px 6px 3px rgb(86 141 229 / 1%), 0 5px 50px 5px rgb(86 141 229 / 3%);
+        }
+
+        .contact-form-subject {
+            margin-top: 2.5rem;
+            width: 70%;
+        }
+
+        .contact-form-message {
+            margin-top: 2.5rem;
+            width: 70%;
+        }
+
+        .contact-form-submit {
+            background-color: rgba(86, 141, 229, 1);
+            padding: 1.5rem;
+            color: #ffff;
+            font-weight: 500;
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+
+        <!-- Begin: Nav -->
+        <nav>
+            <a href="./index.html" id="logo">
+                <img src="./assets/img/logo.svg" alt="Logo">
+                <span id="logo-text">
+                    <span id="red">COVID</span>FLAG</span></a>
+            <a href="./index.html">
+                <li>Trang chủ</li>
+            </a>
+            <a href="./trong-nuoc.html">
+                <li>Trong nước</li>
+            </a>
+            <a href="./the-gioi.html">
+                <li>Thế giới</li>
+            </a>
+            <a href="./about.html">
+                <li>Giới thiệu</li>
+            </a>
+        </nav>
+
+        <!-- End: Nav -->
+
+        <!-- Begin: Dashboard -->
+        <div class="dashboard animate__animated animate__fadeInUp">
+            <h1 class="pd font-h font-w">Về COVIDFLAG</h1>
+        </div>
+        <div class="box box1 animate__animated animate__fadeInUp" style="padding: 50px 70px;">
+            Trang web được tạo ra để giúp mọi người cập nhập thông tin về số ca mắc, số người tiêm vaccine ở Việt Nam và
+            các nước trên thế giới và tin tức Tăng được cập nhập liên tục. <br>
+            Số liệu được cập nhập từ:
+            <ul>
+                <a target="_blank" href="//covid19.gov.vn">
+                    <li>covid19.gov.vn</li>
+                </a>
+                <a target="_blank" href="//population.io">
+                    <li>population.io</li>
+                </a>
+                <a target="_blank" href="//zingnews.vn">
+                    <li>zingnews.vn</li>
+                </a>
+                <a target="_blank" href="//coronatracker.com">
+                    <li>coronatracker.com</li>
+                </a>
+            </ul>
+        </div>
+
+        <div class="dashboard animate__animated animate__fadeInUp">
+            <h1 class="pd font-h font-w">Thành viên</h1>
+        </div>
+        <div class="box box1 animate__animated animate__fadeInUp" style="padding: 50px 50px;text-align: center;">
+            <div>
+                <img src="https://raw.githubusercontent.com/vudinhviett/vuviet.tk/main/img/avatar.jpg"
+                    style="border-radius: 50%;height: 250px;">
+                <p style="font-weight: 700;font-size: 30px;">Vu Viet</p>
+            </div>
+        </div>
+
+        <div class="dashboard animate__animated animate__fadeInUp">
+            <h1 class="pd font-h font-w">Liên hệ</h1>
+        </div>
+        <div class="box box1 animate__animated animate__fadeInUp" style="padding: 50px 50px;text-align: center;">
+            <div>
+                <form class="contact-form" action="https://formcarry.com/s/MwOIjsmoym0" target="modal-iframe"
+                    onsubmit="alert('Gửi thành công');setTimeout(function(){ window.location.reload(); }, 1000)"
+                    method="POST">
+                    <input type="input" class="contact-form-subject" placeholder="Tên" required name="Name" />
+                    <input type="input" class="contact-form-subject" placeholder="Email" required name="Email" />
+                    <input type="input" name="Your message" placeholder="Lời nhắn của bạn" class="contact-form-message"
+                        required>
+                    <input type="submit" class="contact-form-submit" value="Gửi" />
+                </form>
+            </div>
+        </div>
+
+        <footer class="animate__animated animate__fadeInUp">
+            <p style="text-align: center;">Một sản phẩm của <a target="_blank" style="color: #fd5e53;" target="_blank"
+                    href="//vuviet.tk">Vu Viet</a></p>
+        </footer>
+
+    </div>
+    <div class="modal" onclick="hide()">
+        <div class="modal-container">
+            <button id="modal-close" onclick="hide()">X</button>
+            <iframe name="modal-iframe"></iframe>
+        </div>
+    </div>
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>

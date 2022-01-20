@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Trang tổng quan</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="shortcut icon" href="./assets/img/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+
+    <div class="main">
+
+        <!-- Begin: Nav -->
+        <nav>
+            <a href="./index.html" id="logo">
+                <img src="./assets/img/logo.svg" alt="Logo">
+                <span id="logo-text">
+                    <span id="red">COVID</span>FLAG</span></a>
+            <a href="#">
+                <li>Trang chủ</li>
+            </a>
+            <a href="./trong-nuoc.html">
+                <li>Trong nước</li>
+            </a>
+            <a href="./the-gioi.html">
+                <li>Thế giới</li>
+            </a>
+            <a href="./about.html">
+                <li>Giới thiệu</li>
+            </a>
+        </nav>
+
+        <!-- End: Nav -->
+
+        <!-- Begin: Dashboard -->
+        <div class="dashboard animate__animated animate__fadeInUp">
+            <h1 class="pd font-h font-w">Tổng quan</h1>
+            <div id="update"><span class="font-w">
+            </div>
+        </div>
+
+        <!-- Begin: Box 1 -->
+        <div class="box box1 animate__animated animate__fadeInUp">
+            <i class="fas fa-globe-americas" style="color: #4bb1f9;"> </i>&nbsp; Toàn thế giới
+            <br>
+
+            <!-- Begin: Cases -->
+            <div class="row" id="cases">
+                <span class="title-covid row-l text">Ca mắc</span>
+                <span class="row-l num big-num" id="covid-cases">0</span>
+                <span class="now row-l text">Hôm nay</span>
+                <span class="row-l num" id="now-num-cases">0</span>
+                <span class="new row-r text">Tăng</span><br>
+                <span class="row-r num" id="new-num-cases">0</span>
+            </div>
+            <!-- End: Cases -->
+
+            <!-- Begin: Deaths -->
+            <div class="row" id="deaths">
+                <span class="title-covid row-l text">Tử vong</span>
+                <span class="row-l num big-num" id="covid-deaths">0</span>
+                <span class="now row-l text">Hôm nay</span>
+                <span class="row-l num" id="now-num-deaths">0</span>
+                <span class="new row-r text">Tăng</span><br>
+                <span class="row-r num" id="new-num-deaths">0</span>
+            </div>
+            <!-- End: Deaths -->
+
+            <!-- Begin: Recovered -->
+            <div class="row" id="recovered">
+                <span class="title-covid row-l text">Hồi phục</span>
+                <span class="row-l num big-num" id="covid-recovered">0</span>
+                <span class="now row-l text">Hôm nay</span>
+                <span class="row-l num" id="now-num-recovered">0</span>
+                <span class="new row-r text">Tăng</span><br>
+                <span class="row-r num" id="new-num-recovered">0</span>
+            </div>
+            <!-- End: Recovered -->
+
+            <!-- Begin: First vaccine -->
+            <div class="row" id="first-vacxin">
+                <span class="title-covid row-l text">Tiêm mũi 1</span>
+                <span class="row-l num big-num" id="covid-first-vacxin">0</span>
+                <span class="now row-l text">Trên tổng số</span>
+                <span class="row-l num" id="now-num-first-vacxin">0</span>
+                <span class="new row-r text">Tỉ lệ</span><br>
+                <span class="row-r num" id="new-num-first-vacxin">0</span>
+            </div>
+            <!-- End: First vaccine -->
+
+            <!-- Begin: Second vaccine -->
+            <div class="row" id="second-vacxin">
+                <span class="title-covid row-l text">Tiêm mũi 2</span>
+                <span class="row-l num big-num" id="covid-second-vacxin">0</span>
+                <span class="now row-l text">Trên tổng số</span>
+                <span class="row-l num" id="now-num-second-vacxin">0</span>
+                <span class="new row-r text">Tỉ lệ</span><br>
+                <span class="row-r num" id="new-num-second-vacxin">0</span>
+            </div>
+            <!-- End: Second vaccine -->
+        </div>
+        <!-- End: Box 1 -->
+
+        <!-- Begin: Box 1.2 -->
+        <div class="box box1 box1-2 animate__animated animate__fadeInUp" style="margin-top: 25px;">
+            <i class="fas fa-flag" style="color: #4bb1f9;"></i>&nbsp; Việt Nam
+            <br>
+
+            <!-- Begin: Cases -->
+            <div class="row" id="cases">
+                <span class="title-covid row-l text">Ca mắc</span>
+                <span class="row-l num big-num" id="covid-cases-vn">0</span>
+                <span class="now row-l text">Hôm nay</span>
+                <span class="row-l num" id="now-num-cases-vn">0</span>
+                <span class="new row-r text">Tăng</span><br>
+                <span class="row-r num" id="new-num-cases-vn">0</span>
+            </div>
+            <!-- End: Cases -->
+
+            <!-- Begin: Deaths -->
+            <div class="row" id="deaths">
+                <span class="title-covid row-l text">Tử vong</span>
+                <span class="row-l num big-num" id="covid-deaths-vn">0</span>
+                <span class="now row-l text">Hôm nay</span>
+                <span class="row-l num" id="now-num-deaths-vn">0</span>
+                <span class="new row-r text">Tăng</span><br>
+                <span class="row-r num" id="new-num-deaths-vn">0</span>
+            </div>
+            <!-- End: Deaths -->
+
+            <!-- Begin: Recovered -->
+            <div class="row" id="recovered">
+                <span class="title-covid row-l text">Hồi phục</span>
+                <span class="row-l num big-num" id="covid-recovered-vn">0</span>
+                <span class="now row-l text">Hôm nay</span>
+                <span class="row-l num" id="now-num-recovered-vn">0</span>
+                <span class="new row-r text">Tăng</span><br>
+                <span class="row-r num" id="new-num-recovered-vn">0</span>
+            </div>
+            <!-- End: Recovered -->
+
+            <!-- Begin: First vaccine -->
+            <div class="row" id="first-vacxin">
+                <span class="title-covid row-l text">Tiêm mũi 1</span>
+                <span class="row-l num big-num" id="covid-first-vacxin-vn">0</span>
+                <span class="now row-l text">Trên tổng số</span>
+                <span class="row-l num" id="now-num-first-vacxin-vn">0</span>
+                <span class="new row-r text">Tỉ lệ</span><br>
+                <span class="row-r num" id="new-num-first-vacxin-vn">0</span>
+            </div>
+            <!-- End: First vaccine -->
+
+            <!-- Begin: Second vaccine -->
+            <div class="row" id="second-vacxin">
+                <span class="title-covid row-l text">Tiêm mũi 2</span>
+                <span class="row-l num big-num" id="covid-second-vacxin-vn">0</span>
+                <span class="now row-l text">Trên tổng số</span>
+                <span class="row-l num" id="now-num-second-vacxin-vn">0</span>
+                <span class="new row-r text">Tỉ lệ</span><br>
+                <span class="row-r num" id="new-num-second-vacxin-vn">0</span>
+            </div>
+            <!-- End: Second vaccine -->
+        </div>
+        <!-- End: Box 1.2 -->
+
+        <!-- Begin: Box 2 -->
+        <div class="animate__animated animate__fadeInUp">
+            <h3 class="pd font-h font-w">Tin tức</h3>
+        </div>
+        <div class="box box2 animate__animated animate__fadeInUp">
+            <table>
+                <tbody id="news">
+                </tbody>
+            </table>
+        </div>
+        <!-- End: Box 2 -->
+
+        <footer class="animate__animated animate__fadeInUp">
+            <p style="text-align: center;">Một sản phẩm của <a target="_blank" style="color: #fd5e53;" target="_blank"
+                    href="//vuviet.tk">Vu Viet</a></p>
+        </footer>
+
+    </div>
+    <div class="modal" onclick="hide()">
+        <div class="modal-container">
+            <button id="modal-close" onclick="hide()">X</button>
+            <iframe name="modal-iframe"></iframe>
+        </div>
+    </div>
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>

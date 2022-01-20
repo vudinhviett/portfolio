@@ -37,7 +37,7 @@
             <p style="display: none;">vudinhviett, vudinhviet</p>
             <p>Web Developer</p>
             <p class="home-title" style="font-weight: bold;">Follower</p>
-            <div id="transaction-count">36.000</div>
+            <div id="transaction-count">37.000</div>
           </div>
           <div class="home-social"><a rel="dofollow" target="_blank" href="https://vuviet.tk/fb"
               class="home-social-icon"><i class="fab fa-facebook-f"></i></a><a rel="dofollow" target="_blank"
@@ -95,16 +95,24 @@
     <section class="project" id="project">
       <div class="project-box container">
         <div class="project-title title-intro">My Projects</div>
-        <ul class="project-list"><a rel="dofollow" href="https://covid.vuviet.tk" target="_blank" id="vid"
+        <!-- <ul class="project-list"><a rel="dofollow" href="https://covid.vuviet.tk" target="_blank" id="vid"
             class="project-item"><video playsinline="" autoplay="" muted="" loop="">
               <source src="video/project.mp4" type="video/mp4">
             </video>
             <div class="project-item-infor vidhv">
               <h3>Covid-19</h3><span>Bài tập cuối khoá</span>
             </div>
+          </a></ul> -->
+          <ul class="project-list"><a rel="dofollow" href="/covid/" target="_blank" id="vid"
+            class="project-item">
+            <img src="./img/project.png" width="100%" height="100%">
+            <div class="project-item-infor vidhv">
+              <h3>CovidFlag</h3><span>Trang web cập nhập tình hình Covid-19</span>
+            </div>
           </a></ul>
       </div>
     </section>
+
     <section class="contact" id="contact" style="margin-bottom: 50px;">
       <div class="contact-box container">
         <div class="contact-title title-intro">Contact Me</div>
@@ -137,10 +145,7 @@
   <script src="js/main.js"></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VJ6MM9819B"></script>
   <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-VJ6MM9819B');</script>
-  <!-- Messenger Plugin chat Code -->
-  <div id="fb-root"></div>
-
-  <!-- Your Plugin chat code -->
+<!-- 
   <div id="fb-customer-chat" class="fb-customerchat">
   </div>
 
@@ -150,7 +155,6 @@
     chatbox.setAttribute("attribution", "biz_inbox");
   </script>
 
-  <!-- Your SDK code -->
   <script>
     window.fbAsyncInit = function () {
       FB.init({
@@ -166,7 +170,7 @@
       js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-  </script>
+  </script> -->
 </body>
 
 </html>

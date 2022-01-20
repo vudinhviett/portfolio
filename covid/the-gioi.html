@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ca mắc trên thế giới</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="./assets/img/logo.svg" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        table {
+            text-align: center;
+            width: 100%;
+            color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 2px 1px rgb(0 0 0 / 1%), 0 2px 3px 2px rgb(0 0 0 / 2%), 0 4px 15px 4px rgb(0 0 0 / 6%);
+        }
+
+        td {
+            width: 160px;
+            height: 70px;
+            font-size: 16px;
+            overflow: hidden;
+            border-style: none;
+            background-color: transparent;
+        }
+
+        .first {
+            background-color: #0779e4;
+            color: white;
+            height: 50px;
+            font-size: 18px;
+        }
+
+        #search {
+            float: right;
+            padding: 15px 50px 15px 20px;
+            background-color: #3b3f44;
+            border: none;
+            outline: none;
+            color: #fff;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            margin-right: 15px;
+        }
+
+        .world-map {
+            width: 900px;
+            max-width: 100%;
+            margin: 8px auto;
+            box-shadow: 2px 3px 18px -17px black;
+            margin-bottom: 2rem;
+        }
+
+        rect[height="562"] {
+            fill: transparent;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <!-- Begin: Nav -->
+        <nav>
+            <a href="./index.html" id="logo">
+                <img src="./assets/img/logo.svg" alt="Logo">
+                <span id="logo-text">
+                    <span id="red">COVID</span>FLAG</span></a>
+            <a href="./index.html">
+                <li>Trang chủ</li>
+            </a>
+            <a href="./trong-nuoc.html">
+                <li>Trong nước</li>
+            </a>
+            <a href="#">
+                <li>Thế giới</li>
+            </a>
+            <a href="./about.html">
+                <li>Giới thiệu</li>
+            </a>
+        </nav>
+
+        <!-- End: Nav -->
+
+        <!-- Begin: Dashboard -->
+        <div class="dashboard animate__animated animate__fadeInUp">
+            <h1 class="pd font-h font-w">Bản đồ ca mắc</h1>
+            <div id="update"><span class="font-w">
+            </div>
+        </div>
+        <!-- End: Dashbroad -->
+        <!-- Begin: Map world -->
+        <div class="box box1 animate__animated animate__fadeInUp" style="height: 620px; padding-top: 50px;padding-bottom: 0;border-bottom-right-radius:0;border-bottom-left-radius:0">
+
+            <div class="world-map"></div>
+        </div>
+        <!-- End: Map world -->
+
+        <!-- Begin: Box 1 -->
+        <div class="box box1 animate__animated animate__fadeInUp" style="margin-top:0; border-top-right-radius:0;border-top-left-radius:0">
+
+            <!-- Begin: Cases -->
+            <div class="row" id="cases">
+                <span class="title-covid row-l text">Ca mắc</span>
+                <span class="row-l num big-num" id="covid-cases">0</span>
+                <span class="now row-l text">Hôm nay</span>
+                <span class="row-l num" id="now-num-cases">0</span>
+                <span class="new row-r text">Tăng</span><br>
+                <span class="row-r num" id="new-num-cases">0</span>
+            </div>
+            <!-- End: Cases -->
+
+            <!-- Begin: Deaths -->
+            <div class="row" id="deaths">
+                <span class="title-covid row-l text">Tử vong</span>
+                <span class="row-l num big-num" id="covid-deaths">0</span>
+                <span class="now row-l text">Hôm nay</span>
+                <span class="row-l num" id="now-num-deaths">0</span>
+                <span class="new row-r text">Tăng</span><br>
+                <span class="row-r num" id="new-num-deaths">0</span>
+            </div>
+            <!-- End: Deaths -->
+
+            <!-- Begin: Recovered -->
+            <div class="row" id="recovered">
+                <span class="title-covid row-l text">Hồi phục</span>
+                <span class="row-l num big-num" id="covid-recovered">0</span>
+                <span class="now row-l text">Hôm nay</span>
+                <span class="row-l num" id="now-num-recovered">0</span>
+                <span class="new row-r text">Tăng</span><br>
+                <span class="row-r num" id="new-num-recovered">0</span>
+            </div>
+            <!-- End: Recovered -->
+
+            <!-- Begin: First vaccine -->
+            <div class="row" id="first-vacxin">
+                <span class="title-covid row-l text">Tiêm mũi 1</span>
+                <span class="row-l num big-num" id="covid-first-vacxin">0</span>
+                <span class="now row-l text">Trên tổng số</span>
+                <span class="row-l num" id="now-num-first-vacxin">0</span>
+                <span class="new row-r text">Tỉ lệ</span><br>
+                <span class="row-r num" id="new-num-first-vacxin">0</span>
+            </div>
+            <!-- End: First vaccine -->
+
+            <!-- Begin: Second vaccine -->
+            <div class="row" id="second-vacxin">
+                <span class="title-covid row-l text">Tiêm mũi 2</span>
+                <span class="row-l num big-num" id="covid-second-vacxin">0</span>
+                <span class="now row-l text">Trên tổng số</span>
+                <span class="row-l num" id="now-num-second-vacxin">0</span>
+                <span class="new row-r text">Tỉ lệ</span><br>
+                <span class="row-r num" id="new-num-second-vacxin">0</span>
+            </div>
+            <!-- End: Second vaccine -->
+        </div>
+        <!-- End: Box 1 -->
+
+        <!-- Begin: Box 2 -->
+        <div class="animate__animated animate__fadeInUp">
+            <h3 class="pd font-h font-w">Số ca mắc ở các quốc gia trên thế giới</h3>
+            <p class="text pd" style="margin-top: -70px;">*Số ca mắc trong ngày có thể không chính xác</p>
+        </div>
+        <div class="box box2 animate__animated animate__fadeInUp">
+            <table border="0" cellspacing="0" cellpadding="0">
+                <input id="search" type="text" class="form-control" placeholder=" &#xF002; Tìm kiếm quốc gia"
+                    style="font-family:Arial, FontAwesome">
+                <br>
+                <tr class="first">
+                    <th>Quốc gia</th>
+                    <th>Tổng ca mắc</th>
+                    <th>Ca mắc trong ngày</th>
+                    <th>Tử vong</th>
+                </tr>
+                <tbody id="table">
+                </tbody>
+
+            </table>
+        </div>
+        <!-- End: Box 2 -->
+
+        <footer class="animate__animated animate__fadeInUp">
+            <p style="text-align: center;">Một sản phẩm của <a target="_blank" style="color: #fd5e53;" target="_blank"
+                    href="//vuviet.tk">Vu Viet</a></p>
+        </footer>
+
+    </div>
+    <script src='https://www.gstatic.com/charts/loader.js'></script>
+    <script src="./assets/js/the-gioi.js"></script>
+</body>
+
+</html>

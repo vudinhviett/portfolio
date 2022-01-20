@@ -61,7 +61,7 @@ img {
     overflow: hidden;
     pointer-events: none;
     user-select: none;
-  }
+}
 
 .container {
     max-width: 1130px;
@@ -361,10 +361,11 @@ img {
 }
 
 @media screen and (max-width: 767px) {
-    .home-content{
-        
-    padding: 30px 70px 50px 70px;
+    .home-content {
+
+        padding: 30px 70px 50px 70px;
     }
+
     .edu-name {
         font-size: 1.6rem;
     }
@@ -421,12 +422,13 @@ img {
     animation: skill ease 2s;
 }
 
-@keyframes skill{
-    0%{
+@keyframes skill {
+    0% {
         transform: translateX(-200px);
         -webkit-transform: translateX(-200px);
     }
-    100%{
+
+    100% {
         transform: translateX(0);
         -webkit-transform: translateX(0);
     }
@@ -502,10 +504,10 @@ img {
 }
 
 .project-item:hover .project-item-infor {
-    transform: scale(1);
+    opacity: 1;
 }
 
-.project-item video {
+.project-item img {
     border-radius: 10px;
     width: 100%;
     height: 100%;
@@ -525,7 +527,7 @@ img {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    transform: scale(0);
+    opacity: 0;
     transition: 0.3s ease-in-out;
 }
 
@@ -655,10 +657,11 @@ input[type=submit] {
     body, .skill-item-progress {
         background-color: #2B2B2B;
     }
+
     .edu-education-item:hover {
         transition: ease-in-out 0.2s;
         background-color: #2B2B2B;
-      }
+    }
 
     h1, h2, h3, p, .title-intro, span, .skill-item-name, .education-item-time i, .education-item-time span, #transaction-count, .fa-bars:before, .fa-times-circle, .navbar-list span {
         color: #EEEEEE;
@@ -668,13 +671,15 @@ input[type=submit] {
         background-color: #423F3E;
         border: #423F3E;
     }
-    @media screen and (max-width: 767px){
-        .navbar-list{
+
+    @media screen and (max-width: 767px) {
+        .navbar-list {
             background-color: #423F3E;
         }
     }
-    @media screen and (max-width: 1230px){
-        .navbar-list{
+
+    @media screen and (max-width: 1230px) {
+        .navbar-list {
             background-color: #423F3E;
         }
     }
@@ -707,11 +712,13 @@ input[type=submit] {
         border: 3px solid #423F3E;
         border-radius: 6px;
     }
+
     /* Messenger theme */
-    ._9pmv, ._a2zy, ._9ptk{
+    ._9pmv, ._a2zy, ._9ptk {
         background-color: #423f3e;
     }
-    ._a2zr, ._a2zt, ._a1ql, ._9ptm{
+
+    ._a2zr, ._a2zt, ._a1ql, ._9ptm {
         color: #eee;
     }
 }
