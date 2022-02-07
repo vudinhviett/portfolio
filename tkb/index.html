@@ -27,8 +27,13 @@
             <th>Thứ 7</th>
         </tr>
         <!-- Tiết 1 -->
+        <tr style="opacity: 0.9;">
+            <td>7h20</td>
+            <td colspan="5">Truy bài</td>
+            <td></td>
+        </tr>
         <tr>
-            <td>7h30 - 8h10</td>
+            <td>7h30 - 8h15</td>
             <td></td>
             <td>Thể dục</td>
             <td></td>
@@ -38,7 +43,7 @@
         </tr>
         <!-- Tiết 2 -->
         <tr>
-            <td>8h20 - 9h</td>
+            <td>8h25 - 9h10</td>
             <td>Anh TC</td>
             <td>Thể dục</td>
             <td></td>
@@ -48,7 +53,7 @@
         </tr>
         <!-- Tiết 3 -->
         <tr>
-            <td>9h10 - 9h50</td>
+            <td>9h15 - 10h00</td>
             <td>Công nghệ</td>
             <td></td>
             <td></td>
@@ -58,7 +63,7 @@
         </tr>
         <!-- Tiết 4 -->
         <tr>
-            <td>10h00 - 10h40</td>
+            <td>10h05 - 10h50</td>
             <td>Công nghệ</td>
             <td></td>
             <td></td>
@@ -68,7 +73,7 @@
         </tr>
         <!-- Tiết 5 -->
         <tr>
-            <td>10h50 - 11h30</td>
+            <td>10h55 - 11h40</td>
             <td></td>
             <td></td>
             <td></td>
@@ -79,9 +84,14 @@
     </table>
     <table id="chieu" class="animate__animated animate__fadeInUp" border="0" cellspacing="0" cellpadding="0"
         style="margin-top: 20px;margin-bottom: 100px;">
+        <tr style="opacity: 0.9;">
+            <td>13h00</td>
+            <td colspan="5">Truy bài</td>
+            <td></td>
+        </tr>
         <!-- TIẾT 1 -->
         <tr>
-            <td>13h15 - 13h55</td>
+            <td>13h10 - 13h55</td>
             <!-- Thứ 2 -->
             <td>Toán</td>
             <!-- Thứ 3 -->
@@ -97,7 +107,7 @@
         </tr>
         <!-- TIẾT 2 -->
         <tr>
-            <td>14h05 - 14h45</td>
+            <td>14h00 - 14h45</td>
             <!-- Thứ 2 -->
             <td>Toán TC</td>
             <!-- Thứ 3 -->
@@ -113,7 +123,7 @@
         </tr>
         <!-- TIẾT 3 -->
         <tr>
-            <td>14h55 - 15h35</td>
+            <td>14h55 - 15h40</td>
             <!-- Thứ 2 -->
             <td>Anh</td>
             <!-- Thứ 3 -->
@@ -129,7 +139,7 @@
         </tr>
         <!-- TIẾT 4 -->
         <tr>
-            <td>15h45 - 16h25</td>
+            <td>15h45 - 16h30</td>
             <!-- Thứ 2 -->
             <td>Sinh</td>
             <!-- Thứ 3 -->
@@ -145,7 +155,7 @@
         </tr>
         <!-- TIẾT 5 -->
         <tr>
-            <td>16h35 - 17h15</td>
+            <td>16h35 - 17h20</td>
             <!-- Thứ 2 -->
             <td>Chào cờ</td>
             <!-- Thứ 3 -->
@@ -160,7 +170,7 @@
             <td></td>
         </tr>
     </table>
-    <h1 class="text animate__animated animate__fadeInUp">ID</h1>
+    <h1 class="text animate__animated animate__fadeInUp">Zoom ID</h1>
     <table class="id animate__animated animate__fadeInUp" border="0" cellspacing="0" cellpadding="0">
         <tr class="first">
             <th>Môn</th>
@@ -300,9 +310,9 @@
     </script>
     <script>
         window.onload = function () {
-            document.addEventListener("contextmenu", function (e) {
-                e.preventDefault();
-            }, false);
+            // document.addEventListener("contextmenu", function (e) {
+            //     e.preventDefault();
+            // }, false);
             document.addEventListener("keydown", function (e) {
                 //document.onkeydown = function(e) {
                 // "I" key
@@ -340,84 +350,84 @@
     </script>
     <script>
 
-        !function () {
-            function detectDevTool(allow) {
-                if (isNaN(+allow)) allow = 100;
-                var start = +new Date(); // Validation of built-in Object tamper prevention.
-                debugger;
-                var end = +new Date(); // Validates too.
-                if (isNaN(start) || isNaN(end) || end - start > allow) {
-                    // input your code here when devtools detected.
-                }
-            }
-            if (window.attachEvent) {
-                if (document.readyState === "complete" || document.readyState === "interactive") {
-                    detectDevTool();
-                    window.attachEvent('onresize', detectDevTool);
-                    window.attachEvent('onmousemove', detectDevTool);
-                    window.attachEvent('onfocus', detectDevTool);
-                    window.attachEvent('onblur', detectDevTool);
-                } else {
-                    setTimeout(argument.callee, 0);
-                }
-            } else {
-                window.addEventListener('load', detectDevTool);
-                window.addEventListener('resize', detectDevTool);
-                window.addEventListener('mousemove', detectDevTool);
-                window.addEventListener('focus', detectDevTool);
-                window.addEventListener('blur', detectDevTool);
-            }
-        }();
+        // !function () {
+        //     function detectDevTool(allow) {
+        //         if (isNaN(+allow)) allow = 100;
+        //         var start = +new Date(); // Validation of built-in Object tamper prevention.
+        //         debugger;
+        //         var end = +new Date(); // Validates too.
+        //         if (isNaN(start) || isNaN(end) || end - start > allow) {
+        //             // input your code here when devtools detected.
+        //         }
+        //     }
+        //     if (window.attachEvent) {
+        //         if (document.readyState === "complete" || document.readyState === "interactive") {
+        //             detectDevTool();
+        //             window.attachEvent('onresize', detectDevTool);
+        //             window.attachEvent('onmousemove', detectDevTool);
+        //             window.attachEvent('onfocus', detectDevTool);
+        //             window.attachEvent('onblur', detectDevTool);
+        //         } else {
+        //             setTimeout(argument.callee, 0);
+        //         }
+        //     } else {
+        //         window.addEventListener('load', detectDevTool);
+        //         window.addEventListener('resize', detectDevTool);
+        //         window.addEventListener('mousemove', detectDevTool);
+        //         window.addEventListener('focus', detectDevTool);
+        //         window.addEventListener('blur', detectDevTool);
+        //     }
+        // }();
 
-        const devtools = {
-            isOpen: false,
-            orientation: undefined,
-        };
+        // const devtools = {
+        //     isOpen: false,
+        //     orientation: undefined,
+        // };
 
-        const threshold = 160;
+        // const threshold = 160;
 
-        const emitEvent = (isOpen, orientation) => {
-            globalThis.dispatchEvent(new globalThis.CustomEvent('devtoolschange', {
-                detail: {
-                    isOpen,
-                    orientation,
-                },
-            }));
-        };
+        // const emitEvent = (isOpen, orientation) => {
+        //     globalThis.dispatchEvent(new globalThis.CustomEvent('devtoolschange', {
+        //         detail: {
+        //             isOpen,
+        //             orientation,
+        //         },
+        //     }));
+        // };
 
-        const main = ({ emitEvents = true } = {}) => {
-            const widthThreshold = globalThis.outerWidth - globalThis.innerWidth > threshold;
-            const heightThreshold = globalThis.outerHeight - globalThis.innerHeight > threshold;
-            const orientation = widthThreshold ? 'vertical' : 'horizontal';
+        // const main = ({ emitEvents = true } = {}) => {
+        //     const widthThreshold = globalThis.outerWidth - globalThis.innerWidth > threshold;
+        //     const heightThreshold = globalThis.outerHeight - globalThis.innerHeight > threshold;
+        //     const orientation = widthThreshold ? 'vertical' : 'horizontal';
 
-            if (
-                !(heightThreshold && widthThreshold)
-                && ((globalThis.Firebug && globalThis.Firebug.chrome && globalThis.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)
-            ) {
-                if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
-                    emitEvent(true, orientation);
-                }
+        //     if (
+        //         !(heightThreshold && widthThreshold)
+        //         && ((globalThis.Firebug && globalThis.Firebug.chrome && globalThis.Firebug.chrome.isInitialized) || widthThreshold || heightThreshold)
+        //     ) {
+        //         if ((!devtools.isOpen || devtools.orientation !== orientation) && emitEvents) {
+        //             emitEvent(true, orientation);
+        //         }
 
-                devtools.isOpen = true;
-                devtools.orientation = orientation;
-            } else {
-                if (devtools.isOpen && emitEvents) {
-                    emitEvent(false, undefined);
-                }
+        //         devtools.isOpen = true;
+        //         devtools.orientation = orientation;
+        //     } else {
+        //         if (devtools.isOpen && emitEvents) {
+        //             emitEvent(false, undefined);
+        //         }
 
-                devtools.isOpen = false;
-                devtools.orientation = undefined;
-            }
-        };
+        //         devtools.isOpen = false;
+        //         devtools.orientation = undefined;
+        //     }
+        // };
 
-        main({ emitEvents: false });
-        setInterval(main, 500);
+        // main({ emitEvents: false });
+        // setInterval(main, 500);
 
-        // Get notified when it's opened/closed or orientation changes
-        window.addEventListener('devtoolschange', event => {
-            console.clear();
-            document.write(' ')
-        });
+        // // Get notified when it's opened/closed or orientation changes
+        // window.addEventListener('devtoolschange', event => {
+        //     console.clear();
+        //     document.write(' ')
+        // });
     </script>
 </body>
 

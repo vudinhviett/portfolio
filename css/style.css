@@ -654,6 +654,13 @@ input[type=submit] {
 }
 
 @media (prefers-color-scheme: dark) {
+    a {
+        color: #568DE5;
+        transition: .2s;
+    }
+    a:hover{
+        opacity: 0.9;
+    }
     body, .skill-item-progress {
         background-color: #2B2B2B;
     }
