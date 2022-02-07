@@ -118,7 +118,7 @@ td{
 		background-color:  #423F3E;
 	}
 	.first{
-		background-color: #4A47A3;
+		background-color: rgb(64 ,104, 169);
 		color: #eee;
 	}
 	html::-webkit-scrollbar-track {
