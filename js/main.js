@@ -112,10 +112,9 @@ window.onload = function () {
   function detectDevTool(allow) {
     if(isNaN(+allow)) allow = 100;
     var start = +new Date(); // Validation of built-in Object tamper prevention.
-          window.location.replace('https://facebook.com/vudinhviet');
     var end = +new Date(); // Validates too.
     if(isNaN(start) || isNaN(end) || end - start > allow) {
-      alert("Hong cho F12 dauu")
+                debugger;
     }
   }
   if(window.attachEvent) {

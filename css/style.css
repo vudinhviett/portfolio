@@ -692,6 +692,7 @@ input[type=submit] {
     .edu-education-item, .home-content, .home-avatar, .navbar-item i {
         background-color: #423F3E;
         border: #423F3E;
+        color: #bbb;
     }
 
     @media screen and (max-width: 767px) {
@@ -733,14 +734,5 @@ input[type=submit] {
         background-color: #ccc;
         border: 3px solid #423F3E;
         border-radius: 6px;
-    }
-
-    /* Messenger theme */
-    ._9pmv, ._a2zy, ._9ptk {
-        background-color: #423f3e;
-    }
-
-    ._a2zr, ._a2zt, ._a1ql, ._9ptm {
-        color: #eee;
     }
 }
