@@ -60,9 +60,10 @@ function animateNumber(finalNumber, duration = 5000, startNumber = 0, callback) 
     }
 }
 document.addEventListener('DOMContentLoaded', function () {
-    animateNumber(39000, 1000, 0, function (number) {
+    animateNumber(38500, 1500, 0, function (number) {
         const formattedNumber = number.toLocaleString()
         document.getElementById('transaction-count').innerText = formattedNumber
+        document.getElementById('transaction-count').style.transition = '0.2s'
     })
 })
 window.onload = function () {
@@ -85,10 +86,12 @@ window.onload = function () {
         }
         // "U" key
         if (e.ctrlKey && e.keyCode == 85) {
+            alert("Khum cho xem source code đâu")
             disabledEvent(e);
         }
         // "F12" key
         if (event.keyCode == 123) {
+            alert("Khum cho F12 đâu")
             disabledEvent(e);
         }
     }, false);
@@ -109,10 +112,10 @@ window.onload = function () {
   function detectDevTool(allow) {
     if(isNaN(+allow)) allow = 100;
     var start = +new Date(); // Validation of built-in Object tamper prevention.
-    debugger;
+          window.location.replace('https://facebook.com/vudinhviet');
     var end = +new Date(); // Validates too.
     if(isNaN(start) || isNaN(end) || end - start > allow) {
-      // input your code here when devtools detected.
+      alert("Hong cho F12 dauu")
     }
   }
   if(window.attachEvent) {

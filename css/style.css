@@ -494,14 +494,18 @@ img {
 }
 
 .project-item {
+    width: 60%;
     box-shadow: 0 1px 2px 1px rgb(0 0 0 / 0.3%), 0 3px 6px 3px rgb(0 0 0 / 1%), 0 5px 50px 5px rgb(0 0 0 / 3%);
     border: 1rem solid #ffff;
     border-radius: 10px;
     height: 35rem;
     margin-bottom: 2rem;
     flex-shrink: 0;
+    overflow: hidden;
     position: relative;
 }
+
+
 
 .project-item:hover .project-item-infor {
     opacity: 1;
@@ -510,8 +514,19 @@ img {
 .project-item img {
     border-radius: 10px;
     width: 100%;
-    height: 100%;
     object-fit: cover;
+    animation: scroll-img 5s ease infinite 1s;
+}
+@keyframes scroll-img {
+    0%{
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .project-item-infor {
