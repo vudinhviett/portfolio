@@ -1,3 +1,22 @@
+let covid_case_vn = document.getElementById('covid-cases-vn')
+let now_covid_case_vn = document.getElementById('now-num-cases-vn')
+let new_num_cases_vn = document.getElementById('new-num-cases-vn')
+
+let covid_deaths_vn = document.getElementById('covid-deaths-vn')
+let now_num_deaths_vn = document.getElementById('now-num-deaths-vn')
+let new_num_deaths_vn = document.getElementById('new-num-deaths-vn')
+
+let covid_recovered_vn = document.getElementById('covid-recovered-vn')
+let now_num_recovered_vn = document.getElementById('now-num-recovered-vn')
+let new_num_recovered_vn = document.getElementById('new-num-recovered-vn')
+
+let covid_first_vacxin_vn = document.getElementById('covid-first-vacxin-vn')
+let now_num_first_vacxin_vn = document.getElementById('now-num-first-vacxin-vn')
+let new_num_first_vacxin_vn = document.getElementById('new-num-first-vacxin-vn')
+
+let covid_second_vacxin_vn = document.getElementById('covid-second-vacxin-vn')
+let now_num_second_vacxin_vn = document.getElementById('now-num-second-vacxin-vn')
+let new_num_second_vacxin_vn = document.getElementById('new-num-second-vacxin-vn')
 
 google.charts.load("current", {
     packages: ["geochart"]
@@ -47,27 +66,29 @@ google.charts.load("current", {
     return fmt.format(number);
 }
 
-let fetchFnc9 = async () => {
-    let dataFetch9 = await fetch(`https://api.zingnews.vn/public/v2/corona/getChart?type=vaccination`, {
-    })
-    let dataJSON9 = await dataFetch9.json()
-    // console.log(dataJSON9.data)
 
-    covid_first_vacxin_vn.innerHTML = numberFormat(dataJSON9.data.first.total + dataJSON9.data.second.total)
+// Vaccin Vietnam
+let fetchFnc10 = async () => {
+  let dataFetch10 = await fetch(`https://api.zingnews.vn/public/v2/corona/getChart?type=vaccination`, {
+  })
+  let dataJSON10 = await dataFetch10.json()
+  // console.log(dataJSON10.data)
 
-    new_num_first_vacxin_vn.innerHTML = Math.round(dataJSON9.data.firstRatio + dataJSON9.data.secondRatio) + "%"
+  covid_first_vacxin_vn.innerHTML = numberFormat(dataJSON10.data.first.total )
 
-    now_num_first_vacxin_vn.innerHTML = numberFormat((dataJSON9.data.first.total - dataJSON9.data.first.datas[dataJSON9.data.first.datas.length - 1].y))
+  new_num_first_vacxin_vn.innerHTML = Math.round(dataJSON10.data.firstRatio) + "%"
 
-    covid_second_vacxin_vn.innerHTML = numberFormat(dataJSON9.data.second.total)
+  now_num_first_vacxin_vn.innerHTML = numberFormat((dataJSON10.data.first.total - dataJSON10.data.first.datas[dataJSON10.data.first.datas.length - 1].y))
 
-    new_num_second_vacxin_vn.innerHTML = Math.round(dataJSON9.data.secondRatio) + "%"
+  covid_second_vacxin_vn.innerHTML = numberFormat(dataJSON10.data.second.total)
 
-    now_num_second_vacxin_vn.innerHTML = numberFormat((dataJSON9.data.second.total - dataJSON9.data.second.datas[dataJSON9.data.second.datas.length - 1].y))
+  new_num_second_vacxin_vn.innerHTML = Math.round(dataJSON10.data.secondRatio) + "%"
+
+  now_num_second_vacxin_vn.innerHTML = numberFormat((dataJSON10.data.second.total - dataJSON10.data.second.datas[dataJSON10.data.second.datas.length - 1].y))
 
 
 }
-fetchFnc9()
+fetchFnc10()
 
 //   google.load('visualization', '1', {
 //     'packages': ['geochart']
@@ -153,25 +174,6 @@ fetchFnc9()
 //     geochart.draw(data, opts);
 //   };
 
-let covid_case_vn = document.getElementById('covid-cases-vn')
-let now_covid_case_vn = document.getElementById('now-num-cases-vn')
-let new_num_cases_vn = document.getElementById('new-num-cases-vn')
-
-let covid_deaths_vn = document.getElementById('covid-deaths-vn')
-let now_num_deaths_vn = document.getElementById('now-num-deaths-vn')
-let new_num_deaths_vn = document.getElementById('new-num-deaths-vn')
-
-let covid_recovered_vn = document.getElementById('covid-recovered-vn')
-let now_num_recovered_vn = document.getElementById('now-num-recovered-vn')
-let new_num_recovered_vn = document.getElementById('new-num-recovered-vn')
-
-let covid_first_vacxin_vn = document.getElementById('covid-first-vacxin-vn')
-let now_num_first_vacxin_vn = document.getElementById('now-num-first-vacxin-vn')
-let new_num_first_vacxin_vn = document.getElementById('new-num-first-vacxin-vn')
-
-let covid_second_vacxin_vn = document.getElementById('covid-second-vacxin-vn')
-let now_num_second_vacxin_vn = document.getElementById('now-num-second-vacxin-vn')
-let new_num_second_vacxin_vn = document.getElementById('new-num-second-vacxin-vn')
 
 let fetchFnc = async () => {
     let dataFetch = await fetch(`https://static.pipezero.com/covid/data.json`, {
@@ -200,7 +202,7 @@ let fetchFnc2 = async () => {
     let dataFetch2 = await fetch(`https://static.pipezero.com/covid/data.json`, {
     })
     let dataJSON2 = await dataFetch2.json()
-    console.log(dataJSON2.locations)
+    // console.log(dataJSON2.locations)
 
     for (let i = 0; i < dataJSON2.locations.length; i++) {
         table.innerHTML += `

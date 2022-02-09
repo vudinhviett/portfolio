@@ -71,48 +71,71 @@ function numberFormat(number) {
     let fmt = new Intl.NumberFormat();
     return fmt.format(number);
 }
-let fetchFnc = async () => {
-    let dataFetch = await fetch(`https://static.pipezero.com/covid/data.json`, {
-    })
-    let dataJSON = await dataFetch.json()
-    console.log(dataJSON)
-    covid_case.innerHTML = numberFormat(dataJSON.total.world.cases)
-    now_covid_case.innerHTML = "+" + numberFormat(dataJSON.today.world.cases)
-    new_num_cases.innerHTML = "+" + numberFormat(((dataJSON.today.world.cases / dataJSON.total.world.cases) * 100).toFixed(2)) + "%"
-
-    covid_recovered.innerHTML = numberFormat(dataJSON.total.world.recovered)
-    now_num_recovered.innerHTML = "+" + numberFormat(dataJSON.today.world.recovered)
-    new_num_recovered.innerHTML = "+" + numberFormat(((dataJSON.today.world.recovered / dataJSON.total.world.recovered) * 100).toFixed(2)) + "%"
-
-}
-fetchFnc()
-
-
 let fetchFnc7 = async () => {
-    let dataFetch7 = await fetch(`https://api.coronatracker.com/v3/stats/worldometer/global`, {
-    })
-    let dataJSON7 = await dataFetch7.json()
-    // console.log(dataJSON7)
-    covid_deaths.innerHTML = numberFormat(dataJSON7.totalActiveCases)
-    now_num_deaths.innerHTML = "+" + numberFormat(dataJSON7.totalNewCases)
-    new_num_deaths.innerHTML = "+" + numberFormat(((dataJSON7.totalNewCases / dataJSON7.totalActiveCases) * 100).toFixed(2)) + "%"
+  let dataFetch7 = await fetch(`https://api.coronatracker.com/v3/stats/worldometer/global`, {
+  })
+  let dataJSON7 = await dataFetch7.json()
+  // console.log(dataJSON7)
+  covid_deaths.innerHTML = numberFormat(dataJSON7.totalDeaths)
+  now_num_deaths.innerHTML = "+" + numberFormat(dataJSON7.totalNewDeaths)
+  new_num_deaths.innerHTML = "+" + numberFormat(((dataJSON7.totalNewDeaths / dataJSON7.totalDeaths) * 100).toFixed(2)) + "%"
+
+  covid_case.innerHTML = numberFormat(dataJSON7.totalConfirmed)
+  now_covid_case.innerHTML = "+" + numberFormat(dataJSON7.totalNewCases)
+  new_num_cases.innerHTML = "+" + numberFormat(((dataJSON7.totalNewCases / dataJSON7.totalActiveCases) * 100).toFixed(2)) + "%"
+
+  covid_recovered.innerHTML = numberFormat(dataJSON7.totalRecovered)
+  // now_num_recovered.innerHTML = "+" + numberFormat(dataJSON7.today.world.recovered)
+  // new_num_recovered.innerHTML = "+" + numberFormat(((dataJSON7.today.world.recovered / dataJSON7.total.world.recovered) * 100).toFixed(2)) + "%"
+
+
+  let fetchFnc10 = async () => {
+      let dataFetch10 = await fetch(`https://api.coronatracker.com/v3/stats/worldometer/totalTrendingCases?limit=2`, {
+      })
+      let dataJSON10 = await dataFetch10.json()
+      // console.log(dataJSON10)
+      let a = "+" + dataJSON10[0].totalRecovered - dataJSON10[1].totalRecovered
+      now_num_recovered.innerHTML = numberFormat(a)
+      new_num_recovered.innerHTML = "+" + numberFormat(((a / dataJSON10[0].totalRecovered) * 100).toFixed(2)) + "%"
+  }
+  fetchFnc10()
 }
 fetchFnc7()
-
+// Vaccin in the world
 let fetchFnc4 = async () => {
-    let dataFetch4 = await fetch(`https://ix.cnn.io/data/novel-coronavirus-2019-ncov/vaccines-world/vaccine-owid-world-history.json?q=1642241675`, {
-        'Access-Control-Allow-Origin': '*'
-    })
-    let dataJSON4 = await dataFetch4.json()
-    // console.log(dataJSON4)
+  let dataFetch4 = await fetch(`https://ix.cnn.io/data/novel-coronavirus-2019-ncov/vaccines-world/vaccine-owid-world-history.json?q=1642241675`, {
+      'Access-Control-Allow-Origin': '*'
+  })
+  let dataJSON4 = await dataFetch4.json()
+  // console.log(dataJSON4)
 
-    covid_first_vacxin.innerHTML = numberFormat(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleVaccinated)
-    // new_num_first_vacxin.innerHTML = numberFormat(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].daily_people_vaccinated)
-    // now_num_first_vacxin.innerHTML = numberFormat(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleVaccinated - dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].daily_people_vaccinated)
-    new_num_first_vacxin.innerHTML = Math.round(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleVaccinatedPer100) + "%"
-    new_num_second_vacxin.innerHTML = Math.round(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleFullyVaccinatedPer100) + "%"
-    covid_second_vacxin.innerHTML = numberFormat(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleFullyVaccinated)
+  let a = dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleVaccinated - dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleFullyVaccinated
+  covid_first_vacxin.innerHTML = numberFormat(a)
+  // new_num_first_vacxin.innerHTML = numberFormat(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].daily_people_vaccinated)
+  // now_num_first_vacxin.innerHTML = numberFormat(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleVaccinated - dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].daily_people_vaccinated)
 
+  new_num_second_vacxin.innerHTML = Math.round(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleFullyVaccinatedPer100) + "%"
+  covid_second_vacxin.innerHTML = numberFormat(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleFullyVaccinated)
+// Dan so the gioi
+let fetchFnc5 = async () => {
+  let dataFetch5 = await fetch(`https://d6wn6bmjj722w.population.io/1.0/population/World/today-and-tomorrow/n`, {
+  })
+  let dataJSON5 = await dataFetch5.json()
+  // console.log(dataJSON5.total_population[dataJSON5.total_population.length - 1].population)
+  // covid_case.innerHTML = numberFormat(dataJSON.total.world.cases)
+  // new_num_cases.innerHTML = numberFormat(dataJSON.today.world.cases)
+  // now_covid_case.innerHTML = numberFormat(dataJSON.total.world.cases - dataJSON.today.world.cases)
+
+  // covid_deaths.innerHTML = numberFormat(dataJSON.total.world.death)
+  // new_num_deaths.innerHTML = numberFormat(dataJSON.today.world.death)
+  new_num_first_vacxin.innerHTML = (a / dataJSON5.total_population[dataJSON5.total_population.length - 1].population).toFixed(2) + "%"
+  now_num_first_vacxin.innerHTML = numberFormat(dataJSON5.total_population[dataJSON5.total_population.length - 1].population)
+
+  // covid_recovered.innerHTML = numberFormat(dataJSON.total.world.recovered
+  now_num_second_vacxin.innerHTML = numberFormat(dataJSON5.total_population[dataJSON5.total_population.length - 1].population)
+
+}
+fetchFnc5()
 }
 fetchFnc4()
 
