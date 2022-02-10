@@ -512,7 +512,14 @@ img {
     opacity: 1;
 }
 
-.project-item img {
+.project-item #project-light {
+    border-radius: 10px;
+    width: 100%;
+    object-fit: cover;
+    animation: scroll-img 5s ease infinite 1s;
+}
+.project-item #project-dark{
+    display: none;
     border-radius: 10px;
     width: 100%;
     object-fit: cover;
@@ -523,7 +530,7 @@ img {
         transform: translateY(0);
     }
     30% {
-        transform: translateY(-50%);
+        transform: translateY(-40%);
     }
     100% {
         transform: translateY(0);
@@ -716,6 +723,12 @@ input[type=submit] {
 
     .project-item {
         border: 1rem solid #423F3E;
+    }
+    .project-item #project-dark {
+        display: block;
+    }
+    .project-item #project-light {
+        display: none;
     }
 
     ::placeholder {
