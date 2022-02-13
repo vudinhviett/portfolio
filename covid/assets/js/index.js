@@ -121,7 +121,7 @@ let fetchFnc4 = async () => {
     // new_num_first_vacxin.innerHTML = numberFormat(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].daily_people_vaccinated)
     // now_num_first_vacxin.innerHTML = numberFormat(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleVaccinated - dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].daily_people_vaccinated)
 
-    new_num_second_vacxin.innerHTML = Math.round(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleFullyVaccinatedPer100) + "%"
+    new_num_second_vacxin.innerHTML = "+" + Math.round(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleFullyVaccinatedPer100) + "%"
     covid_second_vacxin.innerHTML = numberFormat(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleFullyVaccinated)
 // Dan so the gioi
 let fetchFnc5 = async () => {
@@ -135,7 +135,7 @@ let fetchFnc5 = async () => {
 
     // covid_deaths.innerHTML = numberFormat(dataJSON.total.world.death)
     // new_num_deaths.innerHTML = numberFormat(dataJSON.today.world.death)
-    new_num_first_vacxin.innerHTML = (a / dataJSON5.total_population[dataJSON5.total_population.length - 1].population).toFixed(2) + "%"
+    new_num_first_vacxin.innerHTML = "+" + (a / dataJSON5.total_population[dataJSON5.total_population.length - 1].population).toFixed(2) + "%"
     now_num_first_vacxin.innerHTML = numberFormat(dataJSON5.total_population[dataJSON5.total_population.length - 1].population)
 
     // covid_recovered.innerHTML = numberFormat(dataJSON.total.world.recovered
@@ -196,7 +196,7 @@ fetchFnc2()
 
 let tbody = document.getElementById('news')
 let fetchFnc3 = async () => {
-    let dataFetch3 = await fetch(`https://api.coronatracker.com/news/trending?limit=50&offset=9&language=vi`, {
+    let dataFetch3 = await fetch(`https://api.coronatracker.com/news/trending?limit=20&offset=9&language=vi`, {
     })
     let dataJSON3 = await dataFetch3.json()
     for (let i = 0; i < dataJSON3.items.length; i++) {

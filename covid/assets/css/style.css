@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
-*{
+
+* {
     box-sizing: border-box;
 }
+
 html, body {
     margin: 0;
     padding: 0;
@@ -11,6 +13,7 @@ html, body {
     color: #fff;
     scroll-behavior: smooth;
 }
+
 html::-webkit-scrollbar {
     width: 0.8rem;
 }
@@ -25,6 +28,7 @@ html::-webkit-scrollbar-thumb {
 html::-webkit-scrollbar-track {
     background-color: #21252a;
 }
+
 a:-webkit-any-link {
     text-decoration: none;
 }
@@ -34,24 +38,30 @@ a:-webkit-any-link {
     margin: auto;
     background-color: #21252a;
 }
-a{
+
+a {
     color: #fff;
     transition: .3s;
 }
-a:hover{
+
+a:hover {
     color: #fd5e53;
     transition: .3s;
 }
+
 .pd {
     padding: 30px;
 }
-.font-h{
+
+.font-h {
     font-size: 22px;
     word-spacing: 3px;
 }
-.font-w{
+
+.font-w {
     font-weight: 600;
 }
+
 .text {
     color: #b2b3b4;
 }
@@ -65,29 +75,36 @@ nav {
     justify-content: center;
     height: 63px;
     background-color: #272b2f;
-    box-shadow: 0 3px 5px rgb(0 0 0 / 3%);border-bottom-left-radius: 24px;
+    box-shadow: 0 3px 5px rgb(0 0 0 / 3%);
+    border-bottom-left-radius: 24px;
     border-bottom-right-radius: 24px;
 }
 
 nav img {
     width: 35px;
 }
+
 nav #logo {
     display: flex;
     align-items: center;
     margin-right: calc(100% - 45%);
 }
 
-nav  #logo-text > #red {
+nav #logo-text>#red {
     color: #fd5e53;
 }
-nav  #logo-text {
+
+nav #logo-text {
     font-size: 1rem;
     font-weight: 700;
     margin-left: 10px;
     color: #fff;
     text-transform: uppercase;
     line-height: 0;
+}
+
+.bars {
+    display: none;
 }
 nav li {
     list-style-type: none;
@@ -100,41 +117,49 @@ nav li {
 .dashboard {
     position: relative;
 }
-.dashboard h1{
+
+.dashboard h1 {
     position: absolute;
 }
+
 .dashboard #update {
     float: right;
     position: absolute;
     right: 20px;
     top: 50px;
 }
-.box{
+
+.box {
     background-color: #272b2f;
     border-radius: 24px;
     padding: 30px;
 }
-.box1{
+
+.box1 {
     margin-top: 100px;
 }
 
-.box1 .row{
+.box1 .row {
     display: inline-block;
     width: calc((100% / 5) - 3px);
     padding: 20px;
     height: 150px;
 }
+
 .box1 .row:not(#cases) {
     border-left: 1px dashed #3b3f44;
 }
-.box1 .row > span {
+
+.box1 .row>span {
     display: flex;
     line-height: 1.4;
 }
+
 .box1 .row .row-r {
     float: right;
     margin-top: -42px;
 }
+
 .box1 .row .row-r.num {
     margin-top: -46.5px;
 }
@@ -143,28 +168,36 @@ nav li {
     font-size: 32px;
     font-weight: 800;
 }
-.box1 #cases .num{
+
+.box1 #cases .num {
     color: #21bf73;
 }
+
 .now, .new {
     color: rgba(255, 255, 255, 0.3);
     font-size: 13px;
 }
-.box1 #deaths .num{
+
+.box1 #deaths .num {
     color: #f84435;
 }
-.box1 #recovered .num{
+
+.box1 #recovered .num {
     color: #0779e4;
 }
-.box1 #first-vacxin .num{
+
+.box1 #first-vacxin .num {
     color: #05dfd7;
 }
-.box1 #second-vacxin .num{
+
+.box1 #second-vacxin .num {
     color: #feb72b;
 }
+
 .box2 {
     padding: 30px;
 }
+
 .box2 .new {
     background: #24282c;
     border-radius: 15px;
@@ -173,6 +206,7 @@ nav li {
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 .box2 .title {
     margin-top: 15px;
     margin-bottom: 0;
@@ -183,6 +217,7 @@ nav li {
     padding-right: 100px;
     word-spacing: 2px;
 }
+
 .box2 img {
     width: 250px;
     height: 150px;
@@ -190,6 +225,7 @@ nav li {
     border-radius: 15px;
     margin-top: 10px;
 }
+
 .box2 .content {
     margin-top: 0;
     text-align: justify;
@@ -216,6 +252,7 @@ nav li {
         transform: translateY(-140px);
         opacity: 0.5;
     }
+
     100% {
         transform: translateY(0);
     }
@@ -224,6 +261,7 @@ nav li {
 .modal.open {
     display: flex;
 }
+
 .modal-container {
     background: #fff;
     width: 80vw;
@@ -232,6 +270,7 @@ nav li {
     border-radius: 15px;
     animation: modal ease .6s;
 }
+
 .modal-container iframe {
     width: 100%;
     height: 73.5vh;
@@ -239,6 +278,7 @@ nav li {
     border-bottom-right-radius: 15px;
     border: none;
 }
+
 .modal-container button {
     font-size: 18px;
     font-weight: 700;
@@ -249,55 +289,140 @@ nav li {
     border-top-right-radius: 15px;
     color: #b2b3b4;
 }
+
 .modal-container button:hover {
     background: #fd5e53;
     color: #fff;
     transition: 0.2s;
 }
+
 @media (prefers-color-scheme: light) {
     html, body, .main {
         background-color: #e4eaff;
     }
-    nav, .box{
+
+    nav, .box {
         background-color: #fff;
     }
-    .contact-form input:not([type=submit]){
+
+    .contact-form input:not([type=submit]) {
         background-color: #fff;
         border: #ddd 1px solid !important;
         /* outline: #ddd; */
         color: #21252a;
     }
-    nav li, #logo-text, div{
+
+    nav li, #logo-text, div {
         color: #24282c !important;
     }
+
     a {
         color: #24282c;
     }
-    .row:not(#cases){
+
+    .row:not(#cases) {
         border-left: #eee dashed 1px !important;
     }
-    #search{
+
+    #search {
         background-color: #ddd !important;
     }
-    #title-coutry, h1, h3, p, table, #update{
+
+    #title-coutry, h1, h3, p, table, #update {
         color: #24282c !important;
     }
-    .text{
+
+    .text {
         color: #24282c;
     }
+
     .box2 .new {
         background: #fff;
     }
+
     html::-webkit-scrollbar-thumb {
         height: 10rem;
         background-color: #bbb;
         border: 3px solid #e4eaff;
         border-radius: 6px;
     }
-    
+
     html::-webkit-scrollbar-track, html::-webkit-scrollbar-corner {
         background-color: #e4eaff;
     }
+
     /* html::-webkit-scrollbar-corner: ; */
-    
+
+}
+.nav-mobile {
+    display: none;
+}
+
+/* Mobile */
+@media screen and (max-width: 720px) {
+    .main {
+        width: 100%;
+    }
+
+    nav li {
+        display: none;
+    }
+
+    .box1 {
+        position: relative;
+    }
+
+    .box1 .row {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        padding: 20px;
+        height: 150px;
+        border: none !important;
+    }
+
+    .box1 .row-r {
+        margin-left: 210px;
+        margin-top: -42px !important;
+    }
+
+    span[class="new row-r text"] {
+        margin-left: 230px !important;
+    }
+
+    .num:not(.big-num, .row-l) {
+        margin-top: -21px !important;
+        margin-right: 5px !important;
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 5px !important;
+    }
+
+    .box2 {
+        overflow-wrap: break-word;
+    }
+
+    .box2 .title, .box2 .content {
+        padding: 20px;
+        margin: 0;
+    }
+    nav #logo {
+        margin-right: calc(100% - 60%);
+        margin-left: 25px;
+    }
+    .bars{
+        width: 30px;
+        display: block;
+        margin-right: 25px;
+        fill: #fff;
+    }
+    .nav-mobile {
+        display: none;
+        transition: .2s;
+    }
+
 }
