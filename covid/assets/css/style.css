@@ -83,6 +83,9 @@ nav {
 nav img {
     width: 35px;
 }
+#nav-mobile {
+    display: none;
+}
 
 nav #logo {
     display: flex;
@@ -420,7 +423,7 @@ nav li {
         margin-right: 25px;
         fill: #fff;
     }
-    .nav-mobile {
+    #nav-mobile {
         display: none;
         transition: .2s;
     }
