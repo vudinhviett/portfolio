@@ -12,10 +12,13 @@
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <title>Lịch học và ID - Vu Viet</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" />
 </head>
+
 
 <body>
     <h1 class="text animate__animated animate__fadeInUp">LỊCH HỌC</h1>
+    <p class="text animate__animated animate__fadeInUp">Cập nhập: 16/2</p>
     <table border="0" cellspacing="0" cellpadding="0" class="animate__animated animate__fadeInUp">
         <tr class="first">
             <th></th>
@@ -32,7 +35,7 @@
             <td colspan="5">Truy bài</td>
             <td></td>
         </tr>
-        <tr>
+        <tr id="tiet1s">
             <td>7h30 - 8h10</td>
             <td></td>
             <td>Thể dục</td>
@@ -42,7 +45,7 @@
             <td></td>
         </tr>
         <!-- Tiết 2 -->
-        <tr>
+        <tr id="tiet2s">
             <td>8h20 - 9h</td>
             <td>Anh TC</td>
             <td>Thể dục</td>
@@ -52,7 +55,7 @@
             <td></td>
         </tr>
         <!-- Tiết 3 -->
-        <tr>
+        <tr id="tiet3s">
             <td>9h10 - 9h50</td>
             <td>Công nghệ</td>
             <td></td>
@@ -62,7 +65,7 @@
             <td></td>
         </tr>
         <!-- Tiết 4 -->
-        <tr>
+        <tr id="tiet4s">
             <td>10h - 10h40</td>
             <td>Công nghệ</td>
             <td></td>
@@ -72,7 +75,7 @@
             <td></td>
         </tr>
         <!-- Tiết 5 -->
-        <tr>
+        <tr id="tiet5s">
             <td>10h50 - 11h30</td>
             <td></td>
             <td></td>
@@ -90,7 +93,7 @@
             <td></td>
         </tr>
         <!-- TIẾT 1 -->
-        <tr>
+        <tr id="tiet1c">
             <td>13h10 - 13h55</td>
             <!-- Thứ 2 -->
             <td>Toán</td>
@@ -106,7 +109,7 @@
             <td></td>
         </tr>
         <!-- TIẾT 2 -->
-        <tr>
+        <tr id="tiet2c">
             <td>14h00 - 14h45</td>
             <!-- Thứ 2 -->
             <td>Toán TC</td>
@@ -122,7 +125,7 @@
             <td></td>
         </tr>
         <!-- TIẾT 3 -->
-        <tr>
+        <tr id="tiet3c">
             <td>14h55 - 15h40</td>
             <!-- Thứ 2 -->
             <td>Anh</td>
@@ -138,7 +141,7 @@
             <td></td>
         </tr>
         <!-- TIẾT 4 -->
-        <tr>
+        <tr id="tiet4c">
             <td>15h45 - 16h30</td>
             <!-- Thứ 2 -->
             <td>Sinh</td>
@@ -154,7 +157,7 @@
             <td></td>
         </tr>
         <!-- TIẾT 5 -->
-        <tr>
+        <tr id="tiet5c">
             <td>16h35 - 17h20</td>
             <!-- Thứ 2 -->
             <td>Chào cờ</td>
@@ -171,7 +174,7 @@
         </tr>
     </table>
     <h1 class="text animate__animated animate__fadeInUp">Zoom ID</h1>
-    <table class="id animate__animated animate__fadeInUp" border="0" cellspacing="0" cellpadding="0">
+    <table id="id_zoom" class="id animate__animated animate__fadeInUp" border="0" cellspacing="0" cellpadding="0">
         <tr class="first">
             <th>Môn</th>
             <th>ID</th>
@@ -234,9 +237,9 @@
         </tr>
         <tr>
             <td>GDCD</td>
-            <td><a href="" class="copy-click">497 277 5593</a></td>
-            <td><a href="" class="copy-click">172172</a></td>
-            <td><a href="https://zoom.us/j/4972775593?pwd=172172" target="_blank">Join</a></td>
+            <td><a href="" class="copy-click">966 137 5824</a></td>
+            <td><a href="" class="copy-click">123456</a></td>
+            <td><a href="https://zoom.us/j/9661375824?pwd=123456" target="_blank">Join</a></td>
         </tr>
         <tr>
             <td>Sử</td>
@@ -275,7 +278,381 @@
             <td><a href="https://zoom.us/j/3069719615?pwd=080509" target="_blank">Join</a></td>
         </tr>
     </table>
-    <h5 id="text2" class="text">Một sản phẩm của <a href="https://vuviet.tk">Vu Viet</a></h5>
+    <h5 id="text2" class="text">Một sản phẩm của <a style="color: #7278D1;" href="https://vuviet.tk">Vu Viet</a></h5>
+<!-- Thời gian hiện tại -->
+    <script>
+        let currenttime = new Date()
+        let day = currenttime.getDay()
+        let hour = currenttime.getHours() + ':' + currenttime.getMinutes()
+        // let min = currenttime.getMinutes()
+        // console.log( day , hour)
+
+        // Sáng
+            // Truy bài
+            if(hour > "12:59" && hour < "13:10"){
+            document.getElementsByClassName('truy-bai')[0]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+            }
+            // Tiết 1
+            if(hour > "07:29" && hour < "09:09"){
+                if(day = 1){
+                    let a = document.getElementById("tiet1s").childNodes[3]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 2){
+                    let a = document.getElementById("tiet1s").childNodes[5]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 3){
+                    let a = document.getElementById("tiet1s").childNodes[7]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 4){
+                    let a = document.getElementById("tiet1s").childNodes[9]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 5){
+                    let a = document.getElementById("tiet1s").childNodes[11]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 6){
+                    let a = document.getElementById("tiet1s").childNodes[13]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+            }
+            // Tiêt 2
+            if(hour > "08:19" && hour < "08:59"){
+                if(day = 1){
+                    let a = document.getElementById("tiet2s").childNodes[3]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 2){
+                    let a = document.getElementById("tiet2s").childNodes[5]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 3){
+                    let a = document.getElementById("tiet2s").childNodes[7]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 4){
+                    let a = document.getElementById("tiet2s").childNodes[9]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 5){
+                    let a = document.getElementById("tiet2s").childNodes[11]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 6){
+                    let a = document.getElementById("tiet2s").childNodes[13]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+            }
+            // Tiêt 3
+            if(hour > "09:10" && hour < "09:49"){
+                if(day = 1){
+                    let a = document.getElementById("tiet3s").childNodes[3]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 2){
+                    let a = document.getElementById("tiet3s").childNodes[5]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 3){
+                    let a = document.getElementById("tiet3s").childNodes[7]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 4){
+                    let a = document.getElementById("tiet3s").childNodes[9]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 5){
+                    let a = document.getElementById("tiet3s").childNodes[11]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 6){
+                    let a = document.getElementById("tiet3s").childNodes[13]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+            }
+            // Tiêt 4
+            if(hour > "09:59" && hour < "10:39"){
+                if(day = 1){
+                    let a = document.getElementById("tiet4s").childNodes[3]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 2){
+                    let a = document.getElementById("tiet4s").childNodes[5]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 3){
+                    let a = document.getElementById("tiet4s").childNodes[7]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 4){
+                    let a = document.getElementById("tiet4s").childNodes[9]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 5){
+                    let a = document.getElementById("tiet4s").childNodes[11]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 6){
+                    let a = document.getElementById("tiet4s").childNodes[13]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+            }
+            // Tiêt 5
+            if(hour > "10:49" && hour < "11:29"){
+                if(day = 1){
+                    let a = document.getElementById("tiet5s").childNodes[3]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 2){
+                    let a = document.getElementById("tiet5s").childNodes[5]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 3){
+                    let a = document.getElementById("tiet5s").childNodes[7]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 4){
+                    let a = document.getElementById("tiet5s").childNodes[9]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 5){
+                    let a = document.getElementById("tiet5s").childNodes[11]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 6){
+                    let a = document.getElementById("tiet5s").childNodes[13]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+            }
+
+
+
+
+        // Chiều
+        if(hour > "12:59" && hour < "13:10"){
+            document.getElementsByClassName('truy-bai')[1]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+            }
+            // Tiết 1
+            if(hour > "13:09" && hour < "13:55"){
+                if(day = 1){
+                    let a = document.getElementById("tiet1c").childNodes[3]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 2){
+                    let a = document.getElementById("tiet1c").childNodes[5]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 3){
+                    let a = document.getElementById("tiet1c").childNodes[7]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 4){
+                    let a = document.getElementById("tiet1c").childNodes[9]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 5){
+                    let a = document.getElementById("tiet1c").childNodes[11]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 6){
+                    let a = document.getElementById("tiet1c").childNodes[13]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+            }
+            // Tiêt 2
+            if(hour > "13:59" && hour < "14:45"){
+                if(day = 1){
+                    let a = document.getElementById("tiet2c").childNodes[3]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 2){
+                    let a = document.getElementById("tiet2c").childNodes[5]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 3){
+                    let a = document.getElementById("tiet2c").childNodes[7]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 4){
+                    let a = document.getElementById("tiet2c").childNodes[9]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 5){
+                    let a = document.getElementById("tiet2c").childNodes[11]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 6){
+                    let a = document.getElementById("tiet2c").childNodes[13]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+            }
+            // Tiêt 3
+            if(hour > "14:54" && hour < "15:39"){
+                if(day = 1){
+                    let a = document.getElementById("tiet3c").childNodes[3]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 2){
+                    let a = document.getElementById("tiet3c").childNodes[5]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 3){
+                    let a = document.getElementById("tiet3c").childNodes[7]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 4){
+                    let a = document.getElementById("tiet3c").childNodes[9]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 5){
+                    let a = document.getElementById("tiet3c").childNodes[11]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 6){
+                    let a = document.getElementById("tiet3c").childNodes[13]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+            }
+            // Tiêt 4
+            if(hour > "15:44" && hour < "16:30"){
+                if(day = 1){
+                    let a = document.getElementById("tiet4c").childNodes[3]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 2){
+                    let a = document.getElementById("tiet4c").childNodes[5]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 3){
+                    let a = document.getElementById("tiet4c").childNodes[7]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 4){
+                    let a = document.getElementById("tiet4c").childNodes[9]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 5){
+                    let a = document.getElementById("tiet4c").childNodes[11]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 6){
+                    let a = document.getElementById("tiet4c").childNodes[13]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+            }
+            // Tiêt 5
+            if(hour > "16:34" && hour < "17:20"){
+                if(day = 1){
+                    let a = document.getElementById("tiet5c").childNodes[3]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 2){
+                    let a = document.getElementById("tiet5c").childNodes[5]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 3){
+                    let a = document.getElementById("tiet5c").childNodes[7]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 4){
+                    let a = document.getElementById("tiet5c").childNodes[9]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 5){
+                    let a = document.getElementById("tiet5c").childNodes[11]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+                if(day = 6){
+                    let a = document.getElementById("tiet5c").childNodes[13]
+                    a.style.animation = "den-tiet 1s infinite alternate"
+                    a.classList.add('current')
+                }
+            }
+
+
+            // Kiểm tra môn học
+            // if(document.getElementsByClassName('current').textContent = "Anh TC" || "Sinh hoạt" || "Chào cờ") {
+            //     let a = document.getElementById('id_zoom').childNodes[1].childNodes[2]
+            //         a.style.animation = "den-tiet 1s infinite alternate"                
+            // } else{
+            // if(document.getElementsByClassName('current').textContent = "Toán") {
+            //     let a = document.getElementById('id_zoom').childNodes[1].childNodes[4]
+            //         a.style.animation = "den-tiet 1s infinite alternate"
+                
+            // }
+            // if(document.getElementsByClassName('current').textContent = "Toán") {
+            //     let a = document.getElementById('id_zoom').childNodes[1].childNodes[4]
+            //         a.style.animation = "den-tiet 1s infinite alternate"
+            // }
+    </script>
+
+
     <script>const links = document.querySelectorAll('.copy-click');
         const copyToClipboard = str => {
             const el = document.createElement('input');

@@ -62,6 +62,31 @@ td{
 	color: #757575;
 	font-family: 'Quicksand', sans-serif;
 }
+td a[class="copy-click"]:hover::before {
+	content: "\f0c5";
+	color: #808080;
+	font-family: "Font Awesome 6 Free";
+    font-weight: 200;
+	transition: 5s;
+	margin-right: 5px;
+}
+td a[class="copy-click"]:active::before {
+	content: "\f00c";
+	font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+	transition: 5s;
+	color: #808080;
+	margin-right: 5px;
+}
+@keyframes den-tiet {
+	0% {
+		opacity: 0.5;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+/* den-tiet 1s infinite alternate */
 @media only screen and (max-width: 700px){
 	td{
 		width: 160px;
@@ -98,6 +123,10 @@ td{
 	font-size: 19px;
 }
 @media (prefers-color-scheme: dark){
+td a[class="copy-click"]:active::before, td a[class="copy-click"]:hover:before {
+	color: #eee;
+}
+
 	.text{
 		color: #eee;
 		font-family: 'Quicksand', sans-serif;
