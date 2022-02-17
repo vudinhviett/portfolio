@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <title>Lịch học và ID - Vu Viet</title>
-    <meta http-equiv="refresh" content="60">
+    <meta http-equiv="refresh" content="120">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" />
 </head>
@@ -285,295 +285,233 @@
         
         let currenttime = new Date()
         let day = currenttime.getDay()
-        let hour = currenttime.getHours() + ':' + currenttime.getMinutes()
+        let hour = ("0" + currenttime.getHours()).slice(-2)  + ':' + ("0" + currenttime.getMinutes()).slice(-2)
         // let min = currenttime.getMinutes()
         // console.log( day , hour)
 
         // Sáng
             // Truy bài
-            if(hour > "12:59" && hour < "13:10"){
+            if(hour > "07:20" && hour < "07:29"){
             document.getElementsByClassName('truy-bai')[0]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
             }else {
                 false
             }
-            // Tiết 1
-            if(hour > "07:29" && hour < "09:09"){
-                if(day = 1){
+            
+            if(hour > "07:29" && hour < "08:09"){
+                if(day == 1){
                     let a = document.getElementById("tiet1s").childNodes[3]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 2){
+                if(day == 2){
                     let a = document.getElementById("tiet1s").childNodes[5]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 3){
+                if(day == 3){
                     let a = document.getElementById("tiet1s").childNodes[7]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 4){
+                if(day == 4){
                     let a = document.getElementById("tiet1s").childNodes[9]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 5){
+                if(day == 5){
                     let a = document.getElementById("tiet1s").childNodes[11]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 6){
+                if(day == 6){
                     let a = document.getElementById("tiet1s").childNodes[13]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
             }
             else {
                 false
-            }            // Tiêt 2
+            }            
             if(hour > "08:19" && hour < "08:59"){
-                if(day = 1){
+                if(day == 1){
                     let a = document.getElementById("tiet2s").childNodes[3]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 2){
+                if(day == 2){
                     let a = document.getElementById("tiet2s").childNodes[5]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 3){
+                if(day == 3){
                     let a = document.getElementById("tiet2s").childNodes[7]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 4){
+                if(day == 4){
                     let a = document.getElementById("tiet2s").childNodes[9]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 5){
+                if(day == 5){
                     let a = document.getElementById("tiet2s").childNodes[11]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 6){
+                if(day == 6){
                     let a = document.getElementById("tiet2s").childNodes[13]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
             }
             else {
                 false
-            }            // Tiêt 3
+            }            
             if(hour > "09:10" && hour < "09:49"){
-                if(day = 1){
+                if(day === 1){
                     let a = document.getElementById("tiet3s").childNodes[3]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 2){
+                if(day == 2){
                     let a = document.getElementById("tiet3s").childNodes[5]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 3){
+                if(day == 3){
                     let a = document.getElementById("tiet3s").childNodes[7]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 4){
+                if(day == 4){
                     let a = document.getElementById("tiet3s").childNodes[9]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 5){
+                if(day == 5){
                     let a = document.getElementById("tiet3s").childNodes[11]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 6){
+                if(day == 6){
                     let a = document.getElementById("tiet3s").childNodes[13]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
             }
             else {
                 false
-            }            // Tiêt 4
+            }            
             if(hour > "09:59" && hour < "10:39"){
-                if(day = 1){
+                if(day == 1){
                     let a = document.getElementById("tiet4s").childNodes[3]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 2){
+                if(day == 2){
                     let a = document.getElementById("tiet4s").childNodes[5]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 3){
+                if(day == 3){
                     let a = document.getElementById("tiet4s").childNodes[7]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 4){
+                if(day == 4){
                     let a = document.getElementById("tiet4s").childNodes[9]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 5){
+                if(day == 5){
                     let a = document.getElementById("tiet4s").childNodes[11]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 6){
+                if(day == 6){
                     let a = document.getElementById("tiet4s").childNodes[13]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
             }
             else {
                 false
-            }            // Tiêt 5
+            }            
             if(hour > "10:49" && hour < "11:29"){
-                if(day = 1){
+                if(day == 1){
                     let a = document.getElementById("tiet5s").childNodes[3]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 2){
+                if(day == 2){
                     let a = document.getElementById("tiet5s").childNodes[5]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 3){
+                if(day == 3){
                     let a = document.getElementById("tiet5s").childNodes[7]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 4){
+                if(day == 4){
                     let a = document.getElementById("tiet5s").childNodes[9]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 5){
+                if(day == 5){
                     let a = document.getElementById("tiet5s").childNodes[11]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 6){
+                if(day == 6){
                     let a = document.getElementById("tiet5s").childNodes[13]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
             }
@@ -586,294 +524,237 @@
         // Chiều
         if(hour > "12:59" && hour < "13:10"){
             document.getElementsByClassName('truy-bai')[1]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
             }else {
                 false
             }
-            // Tiết 1
+            
             if(hour > "13:09" && hour < "13:55"){
-                if(day = 1){
-                    let a = document.getElementById("tiet1c").childNodes[3]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day = 2){
+                if(day == 1){
                     let a = document.getElementById("tiet1c").childNodes[5]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 3){
-                    let a = document.getElementById("tiet1c").childNodes[7]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day = 4){
+                if(day == 2){
                     let a = document.getElementById("tiet1c").childNodes[9]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 5){
-                    let a = document.getElementById("tiet1c").childNodes[11]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day = 6){
+                if(day == 3){
                     let a = document.getElementById("tiet1c").childNodes[13]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
+                    a.classList.add('current')
+                }
+                else {
+                    false
+                }
+                if(day == 4){
+                    let a = document.getElementById("tiet1c").childNodes[17]
+                    a.classList.add('current')
+                }
+                else {
+                    false
+                }
+                if(day == 5){
+                    let a = document.getElementById("tiet1c").childNodes[21]
+                    a.classList.add('current')
+                }
+                else {
+                    false
+                }
+                if(day == 6){
+                    let a = document.getElementById("tiet1c").childNodes[25]
                     a.classList.add('current')
                 }
             }
             else {
                 false
-            }            // Tiêt 2
+            }            
             if(hour > "13:59" && hour < "14:45"){
-                if(day = 1){
-                    let a = document.getElementById("tiet2c").childNodes[3]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day = 2){
+                if(day == 1){
                     let a = document.getElementById("tiet2c").childNodes[5]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 3){
-                    let a = document.getElementById("tiet2c").childNodes[7]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day = 4){
+                if(day == 2){
                     let a = document.getElementById("tiet2c").childNodes[9]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 5){
-                    let a = document.getElementById("tiet2c").childNodes[11]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day = 6){
+                if(day == 3){
                     let a = document.getElementById("tiet2c").childNodes[13]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
+                    a.classList.add('current')
+                }
+                else {
+                    false
+                }
+                if(day == 4){
+                    let a = document.getElementById("tiet2c").childNodes[17]
+                    a.classList.add('current')
+                }
+                else {
+                    false
+                }
+                if(day == 5){
+                    let a = document.getElementById("tiet2c").childNodes[21]
+                    a.classList.add('current')
+                }
+                else {
+                    false
+                }
+                if(day == 6){
+                    let a = document.getElementById("tiet2c").childNodes[25]
                     a.classList.add('current')
                 }
             }
             else {
                 false
-            }            // Tiêt 3
+            }            
             if(hour > "14:54" && hour < "15:39"){
-                if(day = 1){
-                    let a = document.getElementById("tiet3c").childNodes[3]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day = 2){
+                if(day == 1){
                     let a = document.getElementById("tiet3c").childNodes[5]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 3){
-                    let a = document.getElementById("tiet3c").childNodes[7]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day = 4){
+                if(day == 2){
                     let a = document.getElementById("tiet3c").childNodes[9]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 5){
-                    let a = document.getElementById("tiet3c").childNodes[11]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day = 6){
+                if(day == 3){
                     let a = document.getElementById("tiet3c").childNodes[13]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
+                    a.classList.add('current')
+                }
+                else {
+                    false
+                }
+                if(day == 4){
+                    let a = document.getElementById("tiet3c").childNodes[17]
+                    a.classList.add('current')
+                }
+                else {
+                    false
+                }
+                if(day == 5){
+                    let a = document.getElementById("tiet3c").childNodes[21]
+                    a.classList.add('current')
+                }
+                else {
+                    false
+                }
+                if(day == 6){
+                    let a = document.getElementById("tiet3c").childNodes[25]
                     a.classList.add('current')
                 }
             }
             else {
                 false
-            }            // Tiêt 4
+            }            
             if(hour > "15:44" && hour < "16:30"){
-                if(day = 1){
-                    let a = document.getElementById("tiet4c").childNodes[3]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day = 2){
+                if(day == 1){
                     let a = document.getElementById("tiet4c").childNodes[5]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 3){
-                    let a = document.getElementById("tiet4c").childNodes[7]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day = 4){
+                if(day == 2){
                     let a = document.getElementById("tiet4c").childNodes[9]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 5){
-                    let a = document.getElementById("tiet4c").childNodes[11]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day = 6){
+                if(day == 3){
                     let a = document.getElementById("tiet4c").childNodes[13]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
+                    a.classList.add('current')
+                }
+                else {
+                    false
+                }
+                if(day == 4){
+                    let a = document.getElementById("tiet4c").childNodes[17]
+                    a.classList.add('current')
+                }
+                else {
+                    false
+                }
+                if(day == 5){
+                    let a = document.getElementById("tiet4c").childNodes[21]
+                    a.classList.add('current')
+                }
+                else {
+                    false
+                }
+                if(day == 6){
+                    let a = document.getElementById("tiet4c").childNodes[25]
                     a.classList.add('current')
                 }
             }
             else {
                 false
-            }            // Tiêt 5
+            }            
             if(hour > "16:34" && hour < "17:20"){
-                if(day = 1){
-                    let a = document.getElementById("tiet5c").childNodes[3]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day = 2){
+                if(day == 1){
                     let a = document.getElementById("tiet5c").childNodes[5]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 3){
-                    let a = document.getElementById("tiet5c").childNodes[7]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day = 4){
+                if(day == 2){
                     let a = document.getElementById("tiet5c").childNodes[9]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
                     a.classList.add('current')
                 }
                 else {
                     false
                 }
-                if(day = 5){
-                    let a = document.getElementById("tiet5c").childNodes[11]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day = 6){
+                if(day == 3){
                     let a = document.getElementById("tiet5c").childNodes[13]
-                    a.style.boxShadow = "0 0.3px 1px 0.3px rgb(0 0 0 / 41%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 15%)"
-                    a.style.transform = "scale(1.05)"
+                    a.classList.add('current')
+                }
+                else {
+                    false
+                }
+                if(day == 4){
+                    let a = document.getElementById("tiet5c").childNodes[17]
+                    a.classList.add('current')
+                }
+                else {
+                    false
+                }
+                if(day == 5){
+                    let a = document.getElementById("tiet5c").childNodes[21]
+                    a.classList.add('current')
+                }
+                else {
+                    false
+                }
+                if(day == 6){
+                    let a = document.getElementById("tiet5c").childNodes[25]
                     a.classList.add('current')
                 }
             }
             else {
                 false
             }
-
+            if (document.getElementsByClassName('current')[0].textContent == ""){
+                let a = document.getElementsByClassName('current')[0]
+                a.classList.remove('current')
+            } else {
+                false
+            }
 
             // Kiểm tra môn học
             // if(document.getElementsByClassName('current').textContent = "Anh TC" || "Sinh hoạt" || "Chào cờ") {
