@@ -109,8 +109,8 @@ let fetchFnc4 = async () => {
   let dataJSON4 = await dataFetch4.json()
   // console.log(dataJSON4)
 
-  let a = dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleVaccinated - dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleFullyVaccinated
-  covid_first_vacxin.innerHTML = numberFormat(a)
+
+
   // new_num_first_vacxin.innerHTML = numberFormat(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].daily_people_vaccinated)
   // now_num_first_vacxin.innerHTML = numberFormat(dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleVaccinated - dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].daily_people_vaccinated)
 
@@ -128,7 +128,12 @@ let fetchFnc5 = async () => {
 
   // covid_deaths.innerHTML = numberFormat(dataJSON.total.world.death)
   // new_num_deaths.innerHTML = numberFormat(dataJSON.today.world.death)
-  new_num_first_vacxin.innerHTML = (a / dataJSON5.total_population[dataJSON5.total_population.length - 1].population).toFixed(2) + "%"
+
+  let a = dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleVaccinated 
+  console.log(a)
+  covid_first_vacxin.innerHTML = numberFormat(dataJSON5.total_population[dataJSON5.total_population.length - 1].population - a)
+  new_num_first_vacxin.innerHTML = Math.round(100 - dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleFullyVaccinatedPer100) + "%"
+
   now_num_first_vacxin.innerHTML = numberFormat(dataJSON5.total_population[dataJSON5.total_population.length - 1].population)
 
   // covid_recovered.innerHTML = numberFormat(dataJSON.total.world.recovered
