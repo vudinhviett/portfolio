@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Lịch học và ID" />
-    <meta property="og:description" content="Trang web chứa lịch học chi tiết và ID học Zoom" />
+    <meta property="og:description" content="Trang web xem thời khoá biểu và ID Zoom của 11A8" />
     <meta property="og:image" content="https://vuviet.tk/tkb/ogimg.jpg" />
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
@@ -19,7 +19,7 @@
 
 <body>
     <h1 class="text animate__animated animate__fadeInUp">LỊCH HỌC</h1>
-    <p class="text animate__animated animate__fadeInUp">Cập nhập: 17/2</p>
+    <p class="text animate__animated animate__fadeInUp">Cập nhập: 23/2</p>
     <table border="0" cellspacing="0" cellpadding="0" class="animate__animated animate__fadeInUp">
         <tr class="first">
             <th></th>
@@ -292,7 +292,7 @@
         // Sáng
             // Truy bài
             if(hour > "07:20" && hour < "07:29"){
-            document.getElementsByClassName('truy-bai')[0]
+            let a = document.getElementsByClassName('truy-bai')[0].childNodes[3]
                     a.classList.add('current')
             }else {
                 false
@@ -523,7 +523,7 @@
 
         // Chiều
         if(hour > "12:59" && hour < "13:10"){
-            let a = document.getElementsByClassName('truy-bai')[1]
+            let a = document.getElementsByClassName('truy-bai')[1].childNodes[3]
                     a.classList.add('current')
             }else {
                 false
