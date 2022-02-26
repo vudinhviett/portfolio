@@ -246,3 +246,17 @@ function hide() {
 }
 
 modal.addEventListener('click', hide())
+
+document.getElementById('nav-tick').onclick = function () {
+    if (document.getElementById('nav-tick').checked){
+        document.getElementById('nav-mobile').style.display = 'block'
+        document.getElementById('nav').style.borderBottomLeftRadius = '0'
+        document.getElementById('nav').style.borderBottomRightRadius = '0'
+    }
+    else {
+        document.getElementById('nav-mobile').style.display = 'none'
+        document.getElementById('nav').style.borderBottomLeftRadius = '24px'
+        document.getElementById('nav').style.borderBottomRightRadius = '24px'
+    }
+}
+

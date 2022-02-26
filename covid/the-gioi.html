@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Ca mắc trên thế giới</title>
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="./assets/img/logo.svg" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -56,8 +58,8 @@
             margin-bottom: 2rem;
         }
 
-        rect[height="562"] {
-            fill: transparent;
+        rect {
+            fill: transparent !important;
         }
     </style>
 </head>
@@ -66,11 +68,18 @@
 
     <div class="main">
         <!-- Begin: Nav -->
-        <nav>
+        <nav id="nav">
             <a href="./index.html" id="logo">
                 <img src="./assets/img/logo.svg" alt="Logo">
                 <span id="logo-text">
                     <span id="red">COVID</span>FLAG</span></a>
+                    <label for="nav-tick">
+                        <svg class="bars" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path
+                                d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z" />
+                        </svg>
+                    </label>
+                    <input type="checkbox" id="nav-tick" style="display: none;" >
             <a href="./index.html">
                 <li>Trang chủ</li>
             </a>
@@ -84,6 +93,20 @@
                 <li>Giới thiệu</li>
             </a>
         </nav>
+        <div id="nav-mobile">
+            <a href="./">
+                <li>Trang chủ</li>
+            </a>
+            <a href="./trong-nuoc.html">
+                <li>Trong nước</li>
+            </a>
+            <a href="#">
+                <li>Thế giới</li>
+            </a>
+            <a href="./about.html">
+                <li>Giới thiệu</li>
+            </a>
+        </div>
 
         <!-- End: Nav -->
 
@@ -95,14 +118,14 @@
         </div>
         <!-- End: Dashbroad -->
         <!-- Begin: Map world -->
-        <div class="box box1 animate__animated animate__fadeInUp" style="height: 620px; padding-top: 50px;padding-bottom: 0;border-bottom-right-radius:0;border-bottom-left-radius:0">
+        <div class="box box1 map animate__animated animate__fadeInUp">
 
             <div class="world-map"></div>
         </div>
         <!-- End: Map world -->
 
         <!-- Begin: Box 1 -->
-        <div class="box box1 animate__animated animate__fadeInUp" style="margin-top:0; border-top-right-radius:0;border-top-left-radius:0">
+        <div class="box box1 num-box-map animate__animated animate__fadeInUp">
 
             <!-- Begin: Cases -->
             <div class="row" id="cases">
@@ -167,7 +190,7 @@
             <p class="text pd" style="margin-top: -70px;">*Số ca mắc trong ngày có thể không chính xác</p>
         </div>
         <div class="box box2 animate__animated animate__fadeInUp">
-            <table border="0" cellspacing="0" cellpadding="0">
+            <table border="0" cellspacing="0" cellpadding="0" id="myTable">
                 <input id="search" type="text" class="form-control" placeholder=" &#xF002; Tìm kiếm quốc gia"
                     style="font-family:Arial, FontAwesome">
                 <br>
