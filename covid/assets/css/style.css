@@ -47,6 +47,12 @@ html, body {
 .home-social-icon:hover {
     transform: scale(1.2);
 }
+table, table th, table td {
+    border-collapse: collapse;
+}
+#more {
+    cursor: pointer;
+}
 @media screen and (min-width: 1270px){
     
 html::-webkit-scrollbar {
@@ -331,7 +337,7 @@ nav li {
     color: #b2b3b4;
 }
 
-.modal-container button:hover {
+.modal-container button {
     background: #fd5e53;
     color: #fff;
     transition: 0.2s;
