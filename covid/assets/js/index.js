@@ -137,7 +137,7 @@ let fetchFnc5 = async () => {
     // new_num_deaths.innerHTML = numberFormat(dataJSON.today.world.death)
 
     let a = dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleVaccinated 
-    console.log(a)
+    // console.log(a)
     covid_first_vacxin.innerHTML = numberFormat(dataJSON5.total_population[dataJSON5.total_population.length - 1].population - a)
     new_num_first_vacxin.innerHTML = Math.round(100 - dataJSON4.data[0].data[dataJSON4.data[0].data.length - 1].peopleFullyVaccinatedPer100) + "%"
 
