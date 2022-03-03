@@ -79,6 +79,78 @@ td {
 	box-shadow: 0 0.3px 1px 0.3px rgb(0 0 0 / 20%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 5%);
 	animation: run-tkb 5s ease infinite;
 }
+#toast {
+	position: fixed;
+	top: 32px;
+	right: 32px;
+	z-index: 999999;
+}
+
+
+
+@keyframes slideInLeft {
+	from {
+		opacity: 0;
+		transform: translateX(calc(100% + 32px));
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeOut {
+	to {
+		opacity: 0;
+	}
+}
+
+.toast--success {
+	border-color: #47d864;
+}
+
+.toast--success .toast__icon {
+	color: #47d864;
+}
+
+
+.toast+.toast {
+	margin-top: 24px;
+}
+
+.toast__icon {
+	font-size: 18px;
+}
+
+.toast__icon,
+.toast__close {
+	padding: 0 16px;
+}
+
+.toast__body {
+	flex-grow: 1;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 2px;
+    padding: 5px 0;
+    min-width: 200px;
+    max-width: 200px;
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    transition: all linear 0.3s;
+}
+.toast__title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
 
 
 @keyframes run-tkb {
@@ -237,4 +309,11 @@ td a[class="copy-click"]:active::before {
 		border: 2px solid #423F3E;
 		border-radius: 6px;
 	}
+	.toast {
+		background-color: #2B2B2B;
+	}
+	.toast__title {
+		color: #fff;
+	}
 }
+

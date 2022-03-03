@@ -14,12 +14,13 @@
     <meta http-equiv="refresh" content="180">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/solid.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 </head>
 
 
 <body>
     <h1 class="text animate__animated animate__fadeIn">LỊCH HỌC</h1>
-    <p class="text animate__animated animate__bounceInDown">Cập nhập: 23/2</p>
+    <p class="text animate__animated animate__bounceInDown">Cập nhập: 3/3</p>
     <table border="0" cellspacing="0" cellpadding="0" class="animate__animated animate__fadeIn">
         <tr class="first">
             <th></th>
@@ -280,496 +281,1707 @@
         </tr>
     </table>
     <h5 id="text2" class="text">Một sản phẩm của <a style="color: #7278D1;" href="https://vuviet.tk">Vu Viet</a></h5>
-<!-- Thời gian hiện tại -->
+    <div id="toast"></div>
+    <!-- Thời gian hiện tại -->
     <script>
-        
+        function showSuccessToast() {
+            toast({
+                title: "Sao chép thành công!",
+                message: "Thông tin đã được gửi đi, chúng tôi sẽ liên hệ lại để hỗ trợ",
+                type: "success",
+                duration: 5000
+            });
+        }
+        // Toast function
+        function toast({ title = "", message = "", type = "info", duration = 3000 }) {
+            const main = document.getElementById("toast");
+            if (main) {
+                const toast = document.createElement("div");
+
+                // Auto remove toast
+                const autoRemoveId = setTimeout(function () {
+                    main.removeChild(toast);
+                }, duration + 1000);
+                toast.onclick = function (e) {
+                    if (e.target.closest(".toast__close")) {
+                        main.removeChild(toast);
+                        clearTimeout(autoRemoveId);
+                    }
+                };
+
+
+
+                const icons = {
+                    success: "fas fa-check-circle",
+                };
+                const icon = icons[type];
+                const delay = (duration / 1000).toFixed(2);
+
+                toast.classList.add("toast", `toast--success`);
+                toast.style.animation = `slideInLeft ease .3s, fadeOut linear 1s ${delay}s forwards`;
+
+                toast.innerHTML = `
+                    <div class="toast__icon">
+                        <i class="${icon}"></i>
+                    </div>
+                    <div class="toast__body">
+                        <h3 class="toast__title">Đã sao chép</h3>
+                    </div>
+                    <div class="toast__close">
+                        <i class="fas fa-times"></i>
+                    </div>
+                `;
+                main.appendChild(toast);
+            }
+        }
+
         let currenttime = new Date()
         let day = currenttime.getDay()
-        let hour = ("0" + currenttime.getHours()).slice(-2)  + ':' + ("0" + currenttime.getMinutes()).slice(-2)
+        let hour = ("0" + currenttime.getHours()).slice(-2) + ':' + ("0" + currenttime.getMinutes()).slice(-2)
         // let min = currenttime.getMinutes()
         // console.log( day , hour)
 
         // Sáng
-            // Truy bài
-            if(hour > "07:20" && hour < "07:29"){
+        // Truy bài
+        if (hour > "07:20" && hour < "07:29") {
             let a = document.getElementsByClassName('truy-bai')[0].childNodes[3]
-                    a.classList.add('current')
-            }else {
-                false
-            }
-            
-            if(hour > "07:29" && hour < "08:09"){
-                if(day == 1){
-                    let a = document.getElementById("tiet1s").childNodes[3]
-                    a.classList.add('current')
+            a.classList.add('current')
+        } else {
+            false
+        }
+
+        if (hour > "07:29" && hour < "08:09") {
+            if (day == 1) {
+                let a = document.getElementById("tiet1s").childNodes[3]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
                 }
-                else {
-                    false
-                }
-                if(day == 2){
-                    let a = document.getElementById("tiet1s").childNodes[5]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 3){
-                    let a = document.getElementById("tiet1s").childNodes[7]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 4){
-                    let a = document.getElementById("tiet1s").childNodes[9]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 5){
-                    let a = document.getElementById("tiet1s").childNodes[11]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 6){
-                    let a = document.getElementById("tiet1s").childNodes[13]
-                    a.classList.add('current')
-                }
-            }
-            else {
-                false
-            }            
-            if(hour > "08:19" && hour < "08:59"){
-                if(day == 1){
-                    let a = document.getElementById("tiet2s").childNodes[3]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 2){
-                    let a = document.getElementById("tiet2s").childNodes[5]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 3){
-                    let a = document.getElementById("tiet2s").childNodes[7]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 4){
-                    let a = document.getElementById("tiet2s").childNodes[9]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 5){
-                    let a = document.getElementById("tiet2s").childNodes[11]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 6){
-                    let a = document.getElementById("tiet2s").childNodes[13]
-                    a.classList.add('current')
-                }
-            }
-            else {
-                false
-            }            
-            if(hour > "09:10" && hour < "09:49"){
-                if(day === 1){
-                    let a = document.getElementById("tiet3s").childNodes[3]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 2){
-                    let a = document.getElementById("tiet3s").childNodes[5]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 3){
-                    let a = document.getElementById("tiet3s").childNodes[7]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 4){
-                    let a = document.getElementById("tiet3s").childNodes[9]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 5){
-                    let a = document.getElementById("tiet3s").childNodes[11]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 6){
-                    let a = document.getElementById("tiet3s").childNodes[13]
-                    a.classList.add('current')
-                }
-            }
-            else {
-                false
-            }            
-            if(hour > "09:59" && hour < "10:39"){
-                if(day == 1){
-                    let a = document.getElementById("tiet4s").childNodes[3]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 2){
-                    let a = document.getElementById("tiet4s").childNodes[5]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 3){
-                    let a = document.getElementById("tiet4s").childNodes[7]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 4){
-                    let a = document.getElementById("tiet4s").childNodes[9]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 5){
-                    let a = document.getElementById("tiet4s").childNodes[11]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 6){
-                    let a = document.getElementById("tiet4s").childNodes[13]
-                    a.classList.add('current')
-                }
-            }
-            else {
-                false
-            }            
-            if(hour > "10:49" && hour < "11:29"){
-                if(day == 1){
-                    let a = document.getElementById("tiet5s").childNodes[3]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 2){
-                    let a = document.getElementById("tiet5s").childNodes[5]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 3){
-                    let a = document.getElementById("tiet5s").childNodes[7]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 4){
-                    let a = document.getElementById("tiet5s").childNodes[9]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 5){
-                    let a = document.getElementById("tiet5s").childNodes[11]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 6){
-                    let a = document.getElementById("tiet5s").childNodes[13]
-                    a.classList.add('current')
-                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
             }
             else {
                 false
             }
+            if (day == 2) {
+                let a = document.getElementById("tiet1s").childNodes[5]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 3) {
+                let a = document.getElementById("tiet1s").childNodes[7]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 4) {
+                let a = document.getElementById("tiet1s").childNodes[9]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 5) {
+                let a = document.getElementById("tiet1s").childNodes[11]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 6) {
+                let a = document.getElementById("tiet1s").childNodes[13]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+        }
+        else {
+            false
+        }
+        if (hour > "08:19" && hour < "08:59") {
+            if (day == 1) {
+                let a = document.getElementById("tiet2s").childNodes[3]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 2) {
+                let a = document.getElementById("tiet2s").childNodes[5]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 3) {
+                let a = document.getElementById("tiet2s").childNodes[7]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 4) {
+                let a = document.getElementById("tiet2s").childNodes[9]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 5) {
+                let a = document.getElementById("tiet2s").childNodes[11]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 6) {
+                let a = document.getElementById("tiet2s").childNodes[13]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+        }
+        else {
+            false
+        }
+        if (hour > "09:10" && hour < "09:49") {
+            if (day === 1) {
+                let a = document.getElementById("tiet3s").childNodes[3]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 2) {
+                let a = document.getElementById("tiet3s").childNodes[5]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 3) {
+                let a = document.getElementById("tiet3s").childNodes[7]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 4) {
+                let a = document.getElementById("tiet3s").childNodes[9]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 5) {
+                let a = document.getElementById("tiet3s").childNodes[11]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 6) {
+                let a = document.getElementById("tiet3s").childNodes[13]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+        }
+        else {
+            false
+        }
+        if (hour > "09:59" && hour < "10:39") {
+            if (day == 1) {
+                let a = document.getElementById("tiet4s").childNodes[3]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 2) {
+                let a = document.getElementById("tiet4s").childNodes[5]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 3) {
+                let a = document.getElementById("tiet4s").childNodes[7]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 4) {
+                let a = document.getElementById("tiet4s").childNodes[9]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 5) {
+                let a = document.getElementById("tiet4s").childNodes[11]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 6) {
+                let a = document.getElementById("tiet4s").childNodes[13]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+        }
+        else {
+            false
+        }
+        if (hour > "10:49" && hour < "11:29") {
+            if (day == 1) {
+                let a = document.getElementById("tiet5s").childNodes[3]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 2) {
+                let a = document.getElementById("tiet5s").childNodes[5]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 3) {
+                let a = document.getElementById("tiet5s").childNodes[7]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 4) {
+                let a = document.getElementById("tiet5s").childNodes[9]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 5) {
+                let a = document.getElementById("tiet5s").childNodes[11]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 6) {
+                let a = document.getElementById("tiet5s").childNodes[13]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+        }
+        else {
+            false
+        }
 
 
 
         // Chiều
-        if(hour > "12:59" && hour < "13:10"){
+        if (hour > "12:59" && hour < "13:10") {
             let a = document.getElementsByClassName('truy-bai')[1].childNodes[3]
-                    a.classList.add('current')
-            }else {
-                false
-            }
-            
-            if(hour > "13:09" && hour < "13:55"){
-                if(day == 1){
-                    let a = document.getElementById("tiet1c").childNodes[3]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 2){
-                    let a = document.getElementById("tiet1c").childNodes[5]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 3){
-                    let a = document.getElementById("tiet1c").childNodes[7]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 4){
-                    let a = document.getElementById("tiet1c").childNodes[9]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 5){
-                    let a = document.getElementById("tiet1c").childNodes[11]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 6){
-                    let a = document.getElementById("tiet1c").childNodes[13]
-                    a.classList.add('current')
-                }
-            }
-            else {
-                false
-            }            
-            if(hour > "13:59" && hour < "14:45"){
-                if(day == 1){
-                    let a = document.getElementById("tiet2c").childNodes[3]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 2){
-                    let a = document.getElementById("tiet2c").childNodes[5]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 3){
-                    let a = document.getElementById("tiet2c").childNodes[7]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 4){
-                    let a = document.getElementById("tiet2c").childNodes[9]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 5){
-                    let a = document.getElementById("tiet2c").childNodes[11]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 6){
-                    let a = document.getElementById("tiet2c").childNodes[13]
-                    a.classList.add('current')
-                }
-            }
-            else {
-                false
-            }            
-            if(hour > "14:54" && hour < "15:39"){
-                if(day == 1){
-                    let a = document.getElementById("tiet3c").childNodes[3]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 2){
-                    let a = document.getElementById("tiet3c").childNodes[5]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 3){
-                    let a = document.getElementById("tiet3c").childNodes[7]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 4){
-                    let a = document.getElementById("tiet3c").childNodes[9]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 5){
-                    let a = document.getElementById("tiet3c").childNodes[11]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 6){
-                    let a = document.getElementById("tiet3c").childNodes[13]
-                    a.classList.add('current')
-                }
-            }
-            else {
-                false
-            }            
-            if(hour > "15:44" && hour < "16:30"){
-                if(day == 1){
-                    let a = document.getElementById("tiet4c").childNodes[3]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 2){
-                    let a = document.getElementById("tiet4c").childNodes[5]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 3){
-                    let a = document.getElementById("tiet4c").childNodes[7]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 4){
-                    let a = document.getElementById("tiet4c").childNodes[9]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 5){
-                    let a = document.getElementById("tiet4c").childNodes[11]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 6){
-                    let a = document.getElementById("tiet4c").childNodes[13]
-                    a.classList.add('current')
-                }
-            }
-            else {
-                false
-            }            
-            if(hour > "16:34" && hour < "17:20"){
-                if(day == 1){
-                    let a = document.getElementById("tiet5c").childNodes[3]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 2){
-                    let a = document.getElementById("tiet5c").childNodes[5]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 3){
-                    let a = document.getElementById("tiet5c").childNodes[7]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 4){
-                    let a = document.getElementById("tiet5c").childNodes[9]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 5){
-                    let a = document.getElementById("tiet5c").childNodes[11]
-                    a.classList.add('current')
-                }
-                else {
-                    false
-                }
-                if(day == 6){
-                    let a = document.getElementById("tiet5c").childNodes[13]
-                    a.classList.add('current')
-                }
-            }
-            else {
-                false
-            }
-            if (document.getElementsByClassName('current')[0].textContent == ""){
-                let a = document.getElementsByClassName('current')[0]
-                a.classList.remove('current')
-            } else {
-                false
-            }
+            a.classList.add('current')
+        } else {
+            false
+        }
 
-            // Kiểm tra môn học
-            // if(document.getElementsByClassName('current').textContent = "Anh TC" || "Sinh hoạt" || "Chào cờ") {
-            //     let a = document.getElementById('id_zoom').childNodes[1].childNodes[2]
-            //         a.style.animation = "den-tiet 1s infinite alternate"                
-            // } else{
-            // if(document.getElementsByClassName('current').textContent = "Toán") {
-            //     let a = document.getElementById('id_zoom').childNodes[1].childNodes[4]
-            //         a.style.animation = "den-tiet 1s infinite alternate"
-                
-            // }
-            // if(document.getElementsByClassName('current').textContent = "Toán") {
-            //     let a = document.getElementById('id_zoom').childNodes[1].childNodes[4]
-            //         a.style.animation = "den-tiet 1s infinite alternate"
-            // }
+        if (hour > "13:09" && hour < "13:55") {
+            if (day == 1) {
+                let a = document.getElementById("tiet1c").childNodes[3]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 2) {
+                let a = document.getElementById("tiet1c").childNodes[5]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 3) {
+                let a = document.getElementById("tiet1c").childNodes[7]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 4) {
+                let a = document.getElementById("tiet1c").childNodes[9]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 5) {
+                let a = document.getElementById("tiet1c").childNodes[11]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 6) {
+                let a = document.getElementById("tiet1c").childNodes[13]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+        }
+        else {
+            false
+        }
+        if (hour > "13:59" && hour < "14:45") {
+            if (day == 1) {
+                let a = document.getElementById("tiet2c").childNodes[3]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 2) {
+                let a = document.getElementById("tiet2c").childNodes[5]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 3) {
+                let a = document.getElementById("tiet2c").childNodes[7]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 4) {
+                let a = document.getElementById("tiet2c").childNodes[9]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 5) {
+                let a = document.getElementById("tiet2c").childNodes[11]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 6) {
+                let a = document.getElementById("tiet2c").childNodes[13]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+        }
+        else {
+            false
+        }
+        if (hour > "14:54" && hour < "15:39") {
+            if (day == 1) {
+                let a = document.getElementById("tiet3c").childNodes[3]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 2) {
+                let a = document.getElementById("tiet3c").childNodes[5]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 3) {
+                let a = document.getElementById("tiet3c").childNodes[7]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 4) {
+                let a = document.getElementById("tiet3c").childNodes[9]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 5) {
+                let a = document.getElementById("tiet3c").childNodes[11]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 6) {
+                let a = document.getElementById("tiet3c").childNodes[13]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+        }
+        else {
+            false
+        }
+        if (hour > "15:44" && hour < "16:30") {
+            if (day == 1) {
+                let a = document.getElementById("tiet4c").childNodes[3]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 2) {
+                let a = document.getElementById("tiet4c").childNodes[5]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 3) {
+                let a = document.getElementById("tiet4c").childNodes[7]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 4) {
+                let a = document.getElementById("tiet4c").childNodes[9]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 5) {
+                let a = document.getElementById("tiet4c").childNodes[11]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 6) {
+                let a = document.getElementById("tiet4c").childNodes[13]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+        }
+        else {
+            false
+        }
+        if (hour > "16:34" && hour < "17:20") {
+            if (day == 1) {
+                let a = document.getElementById("tiet5c").childNodes[3]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+
+            }
+            else {
+                false
+            }
+            if (day == 2) {
+                let a = document.getElementById("tiet5c").childNodes[5]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 3) {
+                let a = document.getElementById("tiet5c").childNodes[7]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 4) {
+                let a = document.getElementById("tiet5c").childNodes[9]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 5) {
+                let a = document.getElementById("tiet5c").childNodes[11]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+            else {
+                false
+            }
+            if (day == 6) {
+                let a = document.getElementById("tiet5c").childNodes[13]
+                a.classList.add('current')
+                function changeTitle(str, time) {
+                    var title, title1, i;
+                    title = document.title;
+                    title1 = str;
+
+                    function blink() {
+                        if (document.title == title1) {
+                            document.title = title;
+                        }
+                        else {
+                            document.title = title1;
+                        }
+                    }
+
+                    setInterval(blink, time);
+
+                }
+
+                changeTitle('Đang học ' + a.textContent, 1000);
+            }
+        }
+        else {
+            false
+        }
+        if (document.getElementsByClassName('current')[0].textContent == "") {
+            let a = document.getElementsByClassName('current')[0]
+            a.classList.remove('current')
+        } else {
+            false
+        }
+
+        // Kiểm tra môn học
+        // if(document.getElementsByClassName('current').textContent = "Anh TC" || "Sinh hoạt" || "Chào cờ") {
+        //     let a = document.getElementById('id_zoom').childNodes[1].childNodes[2]
+        //         a.style.animation = "den-tiet 1s infinite alternate"
+        // } else{
+        // if(document.getElementsByClassName('current').textContent = "Toán") {
+        //     let a = document.getElementById('id_zoom').childNodes[1].childNodes[4]
+        //         a.style.animation = "den-tiet 1s infinite alternate"
+
+        // }
+        // if(document.getElementsByClassName('current').textContent = "Toán") {
+        //     let a = document.getElementById('id_zoom').childNodes[1].childNodes[4]
+        //         a.style.animation = "den-tiet 1s infinite alternate"
+        // }
     </script>
 
 

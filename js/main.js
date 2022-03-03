@@ -135,3 +135,14 @@ window.onload = function () {
     window.addEventListener('blur', detectDevTool);
   }
 }();
+
+// let name_api = document.getElementById('name-api')
+// let fetchFnc2 = async () => {
+//     let dataFetch2 = await fetch(`https://graph.facebook.com/100038052640982?fields=name&access_token=EAAFYaF1thr0BADZCST9C1k370IQcFRSWMMezOybdEzHnS0t0gj5VorJSFjpFARV4TYH3iEwb2asdRLE1E3RkCfrTLG4hGdpFVMxkLkBpLSqpkZAzDL6i7TZBMB7G7q4WZBjjAyUONLHvFYOeX8FKH6oZAlvHO4EBozosPimxIwYlJMYWZChE5ZCfNiBnAcFzhuxdJmrZAPTzD3BwZASB8uKOg`, {
+//     })
+//     let dataJSON2 = await dataFetch2.json()
+//     // console.log(dataJSON2.name)
+//     name_api.innerHTML = dataJSON2.name
+
+// }
+// fetchFnc2()
