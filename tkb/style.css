@@ -18,13 +18,13 @@ html {
 }
 
 html::-webkit-scrollbar {
-	width: 1rem;
+	width: 0.8rem;
 }
 
 html::-webkit-scrollbar-thumb {
 	height: 10rem;
 	background-color: #ccc;
-	border: 2px solid white;
+	border: 1px solid white;
 	border-radius: 6px;
 }
 
@@ -51,7 +51,7 @@ table {
 	color: #808080;
 	border-radius: 10px;
 	overflow: inherit;
-	box-shadow: 0 1px 2px 1px rgb(0 0 0 / 1%), 0 2px 3px 2px rgb(0 0 0 / 2%), 0 4px 15px 4px rgb(0 0 0 / 6%);
+	box-shadow: 0 1px 2px 1px rgb(0 0 0 / 0.5%), 0 2px 3px 2px rgb(0 0 0 / 1%), 0 4px 15px 4px rgb(0 0 0 / 3%);
 }
 
 td {
@@ -76,7 +76,7 @@ td {
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
 	transform: scale(1.05);
-	box-shadow: 0 0.3px 1px 0.3px rgb(0 0 0 / 20%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 5%);
+	box-shadow: 0 0.3px 1px 0.3px rgb(0 0 0 / 10%), 0 3px 6px 3px rgb(0 0 0 / 2%), 0 5px 50px 5px rgb(0 0 0 / 2%);
 	animation: run-tkb 5s ease infinite;
 }
 #toast {
@@ -106,12 +106,8 @@ td {
 	}
 }
 
-.toast--success {
-	border-color: #47d864;
-}
-
 .toast--success .toast__icon {
-	color: #47d864;
+	color: #808080;
 }
 
 
@@ -137,10 +133,8 @@ td {
     align-items: center;
     background-color: #fff;
     border-radius: 2px;
-    padding: 5px 0;
-    min-width: 200px;
-    max-width: 200px;
-    border-left: 4px solid;
+    padding: 15px 10px 10px;
+    border-left: 4px solid hsl(217, 73%, 62%);
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
     transition: all linear 0.3s;
 }
@@ -150,6 +144,9 @@ td {
     font-size: 16px;
     font-weight: 600;
     color: #000;
+}
+.fa-check-circle {
+	color: hsl(217, 73%, 62%);
 }
 
 
@@ -189,11 +186,11 @@ table tr:first-child td:first-child {
 }
 
 .text {
-	color: #757575;
+	color: #808080;
 	font-family: 'Quicksand', sans-serif;
 }
 
-td a[class="copy-click"]:hover::before {
+td a[class="copy-click"]:hover::before, .toast__icon {
 	content: "\f0c5";
 	color: #808080;
 	font-family: "Font Awesome 6 Free";
@@ -226,10 +223,13 @@ td a[class="copy-click"]:active::before {
 	td {
 		width: 160px;
 		height: 70px;
-		font-size: 10px;
+		font-size: 11px;
 		overflow: hidden;
 		border-style: none;
 		background-color: white;
+	}
+	.id td {
+		font-size: 12px !important;
 	}
 
 	.first {
@@ -241,7 +241,28 @@ td a[class="copy-click"]:active::before {
 	#chieu {
 		margin-bottom: 30px;
 	}
-
+	#toast {
+		top: 10px;
+		right: 10px;
+	}
+	.toast {
+		padding: 10px 0;
+	}
+	.toast__title {
+		font-size: 9px;
+	}
+	.fa-check-circle {
+		font-size: 14px;
+	}
+	
+	td a[class="copy-click"]:focus::before {
+		content: "\f00c";
+		font-family: "Font Awesome 6 Free";
+		font-weight: 900;
+		transition: 5s;
+		color: #808080;
+		margin-right: 5px;
+	}
 }
 
 .copy-click {
@@ -311,9 +332,13 @@ td a[class="copy-click"]:active::before {
 	}
 	.toast {
 		background-color: #2B2B2B;
+		border-left: 4px solid rgb(64, 104, 169);
 	}
 	.toast__title {
 		color: #fff;
+	}
+	.fa-check-circle {
+		color: rgb(64, 104, 169);
 	}
 }
 
