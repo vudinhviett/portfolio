@@ -331,7 +331,7 @@ td a[class="copy-click"]:active::before {
 		border-radius: 6px;
 	}
 	.toast {
-		background-color: #2B2B2B;
+		background-color: #423F3E;
 		border-left: 4px solid rgb(64, 104, 169);
 	}
 	.toast__title {
