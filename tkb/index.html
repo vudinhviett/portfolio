@@ -334,6 +334,25 @@
         // let min = currenttime.getMinutes()
         // console.log( day , hour)
 
+
+
+
+
+
+        // Khai bao
+
+        let tiet1s = hour > "07:29" && hour < "08:09"
+        let tiet2s = hour > "08:19" && hour < "08:59"
+        let tiet3s = hour > "09:10" && hour < "09:49"
+        let tiet4s = hour > "09:59" && hour < "10:39"
+        let tiet5s = hour > "10:49" && hour < "11:29"
+
+        let tiet1c = hour > "13:09" && hour < "13:55"
+        let tiet2c = hour > "13:59" && hour < "14:45"
+        let tiet3c = hour > "14:54" && hour < "15:39"
+        let tiet4c = hour > "15:44" && hour < "16:30"
+        let tiet5c = hour > "16:34" && hour < "17:20"
+
         // Sáng
         // Truy bài
         if (hour > "07:20" && hour < "07:29") {
@@ -343,7 +362,7 @@
             false
         }
 
-        if (hour > "07:29" && hour < "08:09") {
+        if (tiet1s) {
             if (day == 1) {
                 let a = document.getElementById("tiet1s").childNodes[3]
                 a.classList.add('current')
@@ -501,7 +520,7 @@
         else {
             false
         }
-        if (hour > "08:19" && hour < "08:59") {
+        if (tiet2s) {
             if (day == 1) {
                 let a = document.getElementById("tiet2s").childNodes[3]
                 a.classList.add('current')
@@ -659,7 +678,7 @@
         else {
             false
         }
-        if (hour > "09:10" && hour < "09:49") {
+        if (tiet3s) {
             if (day === 1) {
                 let a = document.getElementById("tiet3s").childNodes[3]
                 a.classList.add('current')
@@ -817,7 +836,7 @@
         else {
             false
         }
-        if (hour > "09:59" && hour < "10:39") {
+        if (tiet4s) {
             if (day == 1) {
                 let a = document.getElementById("tiet4s").childNodes[3]
                 a.classList.add('current')
@@ -975,7 +994,7 @@
         else {
             false
         }
-        if (hour > "10:49" && hour < "11:29") {
+        if (tiet5s) {
             if (day == 1) {
                 let a = document.getElementById("tiet5s").childNodes[3]
                 a.classList.add('current')
@@ -1144,7 +1163,7 @@
             false
         }
 
-        if (hour > "13:09" && hour < "13:55") {
+        if (tiet1c) {
             if (day == 1) {
                 let a = document.getElementById("tiet1c").childNodes[3]
                 a.classList.add('current')
@@ -1302,7 +1321,7 @@
         else {
             false
         }
-        if (hour > "13:59" && hour < "14:45") {
+        if (tiet2c) {
             if (day == 1) {
                 let a = document.getElementById("tiet2c").childNodes[3]
                 a.classList.add('current')
@@ -1460,7 +1479,7 @@
         else {
             false
         }
-        if (hour > "14:54" && hour < "15:39") {
+        if (tiet3c) {
             if (day == 1) {
                 let a = document.getElementById("tiet3c").childNodes[3]
                 a.classList.add('current')
@@ -1618,7 +1637,7 @@
         else {
             false
         }
-        if (hour > "15:44" && hour < "16:30") {
+        if (tiet4c) {
             if (day == 1) {
                 let a = document.getElementById("tiet4c").childNodes[3]
                 a.classList.add('current')
@@ -1795,7 +1814,7 @@
         else {
             false
         }
-        if (hour > "16:34" && hour < "17:20") {
+        if (tiet5c) {
             if (day == 1) {
                 let a = document.getElementById("tiet5c").childNodes[3]
                 a.classList.add('current')
@@ -2018,9 +2037,9 @@
     </script>
     <script>
         window.onload = function () {
-            // document.addEventListener("contextmenu", function (e) {
-            //     e.preventDefault();
-            // }, false);
+            document.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+            }, false);
             document.addEventListener("keydown", function (e) {
                 //document.onkeydown = function(e) {
                 // "I" key
