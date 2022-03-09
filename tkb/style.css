@@ -42,7 +42,7 @@ a {
 }
 
 a:hover {
-	color: #7278D1;
+	color: hsl(217, 73%, 62%);
 	transition: 0.2s;
 }
 
@@ -133,19 +133,22 @@ td {
     align-items: center;
     background-color: #fff;
     border-radius: 2px;
-    padding: 15px 10px 10px;
+    padding: 5px 10px;
     border-left: 4px solid hsl(217, 73%, 62%);
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
     transition: all linear 0.3s;
 }
 .toast__title {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     font-size: 16px;
     font-weight: 600;
     color: #000;
 }
-.fa-check-circle {
+.toast__msg {
+	margin: 10px 15px 10px 0;
+}
+.fas , .linkyt {
 	color: hsl(217, 73%, 62%);
 }
 
@@ -249,20 +252,12 @@ td a[class="copy-click"]:active::before {
 		padding: 10px 0;
 	}
 	.toast__title {
-		font-size: 9px;
+		font-size: 16px;
 	}
-	.fa-check-circle {
-		font-size: 14px;
+	.fas {
+		font-size: 18px;
 	}
-	
-	td a[class="copy-click"]:focus::before {
-		content: "\f00c";
-		font-family: "Font Awesome 6 Free";
-		font-weight: 900;
-		transition: 5s;
-		color: #808080;
-		margin-right: 5px;
-	}
+
 }
 
 .copy-click {
@@ -272,7 +267,7 @@ td a[class="copy-click"]:active::before {
 }
 
 .copy-click:hover {
-	color: #7278D1;
+	color: hsl(217, 73%, 62%);
 	transition: ease-in-out 0.1s;
 }
 
@@ -335,10 +330,11 @@ td a[class="copy-click"]:active::before {
 		background-color: #423F3E;
 		border-left: 4px solid rgb(64, 104, 169);
 	}
-	.toast__title {
-		color: #fff;
+      
+	  .toast__title , .toast__msg{
+		color: #aaa;
 	}
-	.fa-check-circle {
+	.fas , .linkyt{
 		color: rgb(64, 104, 169);
 	}
 }

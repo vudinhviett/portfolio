@@ -20,7 +20,7 @@
 
 <body class="animate__fadeIn animate__animated">
     <h1 class="text ">LỊCH HỌC</h1>
-    <p class="text ">Cập nhập: 6/3</p>
+    <p class="text ">Cập nhập: 9/3</p>
     <table border="0" cellspacing="0" cellpadding="0" class="">
         <tr class="first">
             <th></th>
@@ -280,53 +280,68 @@
             <td><a href="https://zoom.us/j/3069719615?pwd=080509" target="_blank">Join</a></td>
         </tr>
     </table>
-    <h5 id="text2" class="text">Một sản phẩm của <a style="color: #7278D1;" href="https://vuviet.tk">Vu Viet</a></h5>
+    <h5 id="text2" class="text">Một sản phẩm của <a style="color: hsl(217, 73%, 62%);" target="_blank" href="https://vuviet.tk">Vu Viet</a></h5>
     <div id="toast"></div>
     <!-- Thời gian hiện tại -->
     <script>
-        function showSuccessToast() {
-            toast({
-                title: "Sao chép thành công!",
-                message: "Thông tin đã được gửi đi, chúng tôi sẽ liên hệ lại để hỗ trợ",
-                type: "success",
-                duration: 2000
-            });
-        }
-        // Toast function
-        function toast({ title = "", message = "", type = "info", duration = 3000 }) {
-            const main = document.getElementById("toast");
-            if (main) {
-                const toast = document.createElement("div");
+showErrorToast()
 
-                // Auto remove toast
-                const autoRemoveId = setTimeout(function () {
-                    main.removeChild(toast);
-                }, duration + 1000);
-                toast.onclick = function (e) {
-                    if (e.target.closest(".toast__close")) {
-                        main.removeChild(toast);
-                        clearTimeout(autoRemoveId);
-                    }
-                };
+
+function showSuccessToast() {
+    toast({
+    message: "Đã sao chép",
+      type: "success",
+      duration: 2000
+    });
+  }
+
+  function showErrorToast() {
+    toast({
+      message: "Xem record tại <a class='linkyt' target='_blank' href='https://bit.ly/record11a8vv'>đây</a>",
+      type: "error",
+      duration: 6000
+    });
+  }
 
 
 
-                const icons = {
-                    success: "fas fa-check-circle",
-                };
-                const icon = icons[type];
 
-                toast.classList.add("toast", `toast--success`);
-                toast.style.animation = `slideInLeft ease .3s, fadeOut linear 1s 2.4s forwards`;
+        
+// Toast function
+function toast({ title = "", message = "", type = "info", duration = 3000 }) {
+  const main = document.getElementById("toast");
+  if (main) {
+    const toast = document.createElement("div");
 
-                toast.innerHTML = `
+    // Auto remove toast
+    const autoRemoveId = setTimeout(function () {
+      main.removeChild(toast);
+    }, duration + 1000);
+
+
+    const icons = {
+      success: "fas fa-check-circle",
+      error: "fas fa-bell"
+    };
+    const icon = icons[type];
+    const delay = (duration / 1000).toFixed(2);
+
+    toast.classList.add("toast", `toast--${type}`);
+    toast.style.animation = `slideInLeft ease .3s, fadeOut linear 1s ${delay}s forwards`;
+
+    toast.innerHTML = `
                     <div class="toast__icon">
                         <i class="${icon}"></i>
                     </div>
+                    <div class="toast__body">
+                        <h3 class="toast__title">${title}</h3>
+                        <p class="toast__msg">${message}</p>
+                    </div>
                 `;
-                main.appendChild(toast);
-            }
-        }
+    main.appendChild(toast);
+  }
+}
+
 
         let currenttime = new Date()
         let day = currenttime.getDay()
