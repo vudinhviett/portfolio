@@ -178,7 +178,7 @@
     <h1 class="text ">Zoom ID</h1>
     <table id="id_zoom" class="id " border="0" cellspacing="0" cellpadding="0">
         <tr class="first">
-            <th>Môn</th>
+            <th>Tiết</th>
             <th>ID</th>
             <th>Pass</th>
             <th>Link</th>
@@ -1993,6 +1993,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
             if (document.getElementsByClassName('current')[0].textContent == "") {
                 let a = document.getElementsByClassName('current')[0]
                 a.classList.remove('current')
+                document.title = "Lịch học và ID - Vu Viet"
             } else {
                 false
             }
