@@ -193,24 +193,6 @@ table tr:first-child td:first-child {
 	font-family: 'Quicksand', sans-serif;
 }
 
-td a[class="copy-click"]:hover::before, .toast__icon {
-	content: "\f0c5";
-	color: #808080;
-	font-family: "Font Awesome 6 Free";
-	font-weight: 200;
-	transition: 5s;
-	margin-right: 5px;
-}
-
-td a[class="copy-click"]:active::before {
-	content: "\f00c";
-	font-family: "Font Awesome 6 Free";
-	font-weight: 900;
-	transition: 5s;
-	color: #808080;
-	margin-right: 5px;
-}
-
 @keyframes den-tiet {
 	0% {
 		opacity: 0.5;
@@ -282,9 +264,6 @@ td a[class="copy-click"]:active::before {
 }
 
 @media (prefers-color-scheme: dark) {
-	td a[class="copy-click"]:active::before, td a[class="copy-click"]:hover:before {
-		color: #eee;
-	}
 
 	.text {
 		color: #eee;
