@@ -19,7 +19,7 @@
 
 <body class="animate__fadeIn animate__animated">
     <h1 class="text ">LỊCH HỌC</h1>
-    <p class="text ">Cập nhập: 9/3</p>
+    <p class="text ">Cập nhập: 18/3</p>
     <table border="0" cellspacing="0" cellpadding="0" class="">
         <tr class="first">
             <th></th>
@@ -283,7 +283,7 @@
     <div id="toast"></div>
     <!-- Thời gian hiện tại -->
     <script>
-showErrorToast()
+// showErrorToast()
 
 
 function showSuccessToast() {
@@ -294,13 +294,13 @@ function showSuccessToast() {
     });
   }
 
-  function showErrorToast() {
-    toast({
-      message: "Xem record tại <a class='linkyt' target='_blank' href='https://bit.ly/record11a8vv'>đây</a>",
-      type: "error",
-      duration: 10000
-    });
-  }
+//   function showErrorToast() {
+//     toast({
+//       message: "Xem record tại <a class='linkyt' target='_blank' href='https://bit.ly/record11a8vv'>đây</a>",
+//       type: "error",
+//       duration: 10000
+//     });
+//   }
 
 
 
@@ -369,12 +369,12 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
         // Sáng
         // Truy bài
-        if (hour > "07:20" && hour < "07:29") {
-            let a = document.getElementsByClassName('truy-bai')[0].childNodes[3]
-            a.classList.add('current')
-        } else {
-            false
-        }
+        // if (hour > "07:20" && hour < "07:29") {
+        //     let a = document.getElementsByClassName('truy-bai')[0].childNodes[3]
+        //     a.classList.add('current')
+        // } else {
+        //     false
+        // }
 
         if (tiet1s) {
             if (day == 1) {
@@ -398,7 +398,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -424,7 +424,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -450,7 +450,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -476,7 +476,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -502,7 +502,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -528,7 +528,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
         }
         else {
@@ -556,7 +556,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -582,7 +582,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -608,7 +608,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -634,7 +634,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -660,7 +660,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -686,7 +686,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
         }
         else {
@@ -714,7 +714,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -740,7 +740,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -766,7 +766,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -792,7 +792,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -818,7 +818,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -844,7 +844,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
         }
         else {
@@ -872,7 +872,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -898,7 +898,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -924,7 +924,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -950,7 +950,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -976,7 +976,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1002,7 +1002,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
         }
         else {
@@ -1030,7 +1030,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1056,7 +1056,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1082,7 +1082,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1108,7 +1108,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1134,7 +1134,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1160,7 +1160,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
         }
         else {
@@ -1170,12 +1170,12 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
 
         // Chiều
-        if (hour > "12:59" && hour < "13:10") {
-            let a = document.getElementsByClassName('truy-bai')[1].childNodes[3]
-            a.classList.add('current')
-        } else {
-            false
-        }
+        // if (hour > "12:59" && hour < "13:10") {
+        //     let a = document.getElementsByClassName('truy-bai')[1].childNodes[3]
+        //     a.classList.add('current')
+        // } else {
+        //     false
+        // }
 
         if (tiet1c) {
             if (day == 1) {
@@ -1199,7 +1199,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1225,7 +1225,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1251,7 +1251,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1277,7 +1277,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1303,7 +1303,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1329,7 +1329,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
         }
         else {
@@ -1357,7 +1357,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1383,7 +1383,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1409,7 +1409,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1435,7 +1435,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1461,7 +1461,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1487,7 +1487,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
         }
         else {
@@ -1515,7 +1515,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1541,7 +1541,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1567,7 +1567,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1593,7 +1593,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1619,7 +1619,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1645,7 +1645,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
         }
         else {
@@ -1673,7 +1673,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1699,7 +1699,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1725,7 +1725,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1751,7 +1751,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1777,7 +1777,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1803,7 +1803,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
                 function changeTitle(str, time) {
                     var title, title1, i;
                     title = document.title;
@@ -1822,7 +1822,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
         }
         else {
@@ -1850,7 +1850,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
 
             }
             else {
@@ -1877,7 +1877,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1903,7 +1903,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1929,7 +1929,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1955,7 +1955,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
             else {
                 false
@@ -1981,7 +1981,7 @@ function toast({ title = "", message = "", type = "info", duration = 3000 }) {
 
                 }
 
-                changeTitle('Đang học ' + a.textContent, 1000);
+                changeTitle('Đang học ' + a.textContent, 1500);
             }
         }
         else {
