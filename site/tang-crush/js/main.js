@@ -84,9 +84,9 @@ function textGenerate() {
         for (let i = 1; i <= count; i++) {
             n = n + a[i];
             if (i == text.length + 1) {
-                $('#txtReason').val("");
-                n = "";
-                break;
+ $('#txtReason').val("");
+ n = "";
+ break;
             }
         }
     }
@@ -117,15 +117,15 @@ $('#yes').click(function() {
     }).then((result) => {
         if (result.value) {
             Swal.fire({
-                width: 900,
-                confirmButtonText: CONFIG.btnAccept,
-                background: '#fff url("img/iput-bg.jpg")',
-                title: CONFIG.mess,
-                text: CONFIG.messDesc,
-                confirmButtonColor: '#83d0c9',
-                onClose: () => {
-                    window.location = CONFIG.messLink;
-                  }
+ width: 900,
+ confirmButtonText: CONFIG.btnAccept,
+ background: '#fff url("img/iput-bg.jpg")',
+ title: CONFIG.mess,
+ text: CONFIG.messDesc,
+ confirmButtonColor: '#83d0c9',
+ onClose: () => {
+     window.location = CONFIG.messLink;
+   }
             })
         }
     })

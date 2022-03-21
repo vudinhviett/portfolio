@@ -50,10 +50,10 @@ function animateNumber(finalNumber, duration = 5000, startNumber = 0, callback) 
         } else {
             let inc = Math.ceil(finalNumber / (duration / 17))
             if (currentNumber + inc > finalNumber) {
-                currentNumber = finalNumber
-                clearInterval(interval)
+ currentNumber = finalNumber
+ clearInterval(interval)
             } else {
-                currentNumber += inc
+ currentNumber += inc
             }
             callback(currentNumber)
         }
@@ -114,7 +114,7 @@ window.onload = function () {
     var start = +new Date(); // Validation of built-in Object tamper prevention.
     var end = +new Date(); // Validates too.
     if(isNaN(start) || isNaN(end) || end - start > allow) {
-                debugger;
+ debugger;
     }
   }
   if(window.attachEvent) {

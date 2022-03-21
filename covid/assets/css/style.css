@@ -3,6 +3,7 @@
 * {
     box-sizing: border-box;
     transition: .2s;
+    appearance: none;
 }
 
 html, body {
@@ -13,6 +14,7 @@ html, body {
     font-size: 17px;
     color: #fff;
     scroll-behavior: smooth;
+    user-select: none;
 }
 #nav-mobile {
     display: none;
