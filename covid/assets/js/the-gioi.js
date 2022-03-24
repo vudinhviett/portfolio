@@ -1,28 +1,29 @@
 function drawRegionsMap(){fetch("https://api.covid19api.com/summary").then(e=>e.json()).then(e=>{let t=[];e.Countries.forEach(e=>{t.push([e.Country,e.TotalConfirmed])});var n=google.visualization.arrayToDataTable([["Quốc gia","Số ca mắc"],...t,["Russia",t[142][1]],["United States",t[184][1]],["Venezuela",t[188][1]],["Iran",t[78][1]],["South Korea",t[89][1]],["Vietnam",t[189][1]]]);new google.visualization.GeoChart(document.querySelector(".world-map")).draw(n,{colorAxis:{colors:["#21bf73","#6BBC5B","#6BBC5B","#B4BA43","#feb72b","#FC9135","#FA6A3F","#f84449"]}})})}google.charts.load("current",{packages:["geochart"]}),google.charts.setOnLoadCallback(drawRegionsMap),google.charts.load("current",{packages:["geochart"]}),google.charts.setOnLoadCallback(drawRegionsMap);let covid_case=document.getElementById("covid-cases"),now_covid_case=document.getElementById("now-num-cases"),new_num_cases=document.getElementById("new-num-cases"),covid_deaths=document.getElementById("covid-deaths"),now_num_deaths=document.getElementById("now-num-deaths"),new_num_deaths=document.getElementById("new-num-deaths"),covid_recovered=document.getElementById("covid-recovered"),now_num_recovered=document.getElementById("now-num-recovered"),new_num_recovered=document.getElementById("new-num-recovered"),covid_first_vacxin=document.getElementById("covid-first-vacxin"),now_num_first_vacxin=document.getElementById("now-num-first-vacxin"),new_num_first_vacxin=document.getElementById("new-num-first-vacxin"),covid_second_vacxin=document.getElementById("covid-second-vacxin"),now_num_second_vacxin=document.getElementById("now-num-second-vacxin"),new_num_second_vacxin=document.getElementById("new-num-second-vacxin");function numberFormat(e){return(new Intl.NumberFormat).format(e)}window.onload=function(){function e(e){return e.stopPropagation?e.stopPropagation():window.event&&(window.event.cancelBubble=!0),e.preventDefault(),!1}document.addEventListener("contextmenu",function(e){e.preventDefault()},!1),document.addEventListener("keydown",function(t){t.ctrlKey&&t.shiftKey&&73==t.keyCode&&e(t),t.ctrlKey&&t.shiftKey&&74==t.keyCode&&e(t),83==t.keyCode&&(navigator.platform.match("Mac")?t.metaKey:t.ctrlKey)&&e(t),t.ctrlKey&&85==t.keyCode&&(alert("Khum cho xem source code đâu"),e(t)),123==event.keyCode&&(alert("Khum cho F12 đâu"),e(t))},!1)},function(){function e(e){isNaN(+e)&&(e=100);var t=+new Date,n=+new Date;isNaN(t)||isNaN(n)}window.attachEvent?"complete"===document.readyState||"interactive"===document.readyState?(e(),window.attachEvent("onresize",e),window.attachEvent("onmousemove",e),window.attachEvent("onfocus",e),window.attachEvent("onblur",e)):setTimeout(argument.callee,0):(window.addEventListener("load",e),window.addEventListener("resize",e),window.addEventListener("mousemove",e),window.addEventListener("focus",e),window.addEventListener("blur",e))}();let fetchFnc7=async()=>{let e=await fetch("https://api.coronatracker.com/v3/stats/worldometer/global",{}),t=await e.json();covid_deaths.innerHTML=numberFormat(t.totalDeaths),now_num_deaths.innerHTML="+"+numberFormat(t.totalNewDeaths),new_num_deaths.innerHTML="+"+numberFormat((t.totalNewDeaths/t.totalDeaths*100).toFixed(2))+"%",covid_case.innerHTML=numberFormat(t.totalConfirmed),now_covid_case.innerHTML="+"+numberFormat(t.totalNewCases),new_num_cases.innerHTML="+"+numberFormat((t.totalNewCases/t.totalActiveCases*100).toFixed(2))+"%",covid_recovered.innerHTML=numberFormat(t.totalRecovered);(async()=>{let e=await fetch("https://api.coronatracker.com/v3/stats/worldometer/totalTrendingCases?limit=2",{}),t=await e.json(),n="+"+t[0].totalRecovered-t[1].totalRecovered;now_num_recovered.innerHTML=numberFormat(n),new_num_recovered.innerHTML="+"+numberFormat((n/t[0].totalRecovered*100).toFixed(2))+"%"})()};fetchFnc7();let fetchFnc4=async()=>{let e=await fetch("https://ix.cnn.io/data/novel-coronavirus-2019-ncov/vaccines-world/vaccine-owid-world-history.json?q=1642241675",{"Access-Control-Allow-Origin":"*"}),t=await e.json();new_num_second_vacxin.innerHTML=Math.round(t.data[0].data[t.data[0].data.length-1].peopleFullyVaccinatedPer100)+"%",covid_second_vacxin.innerHTML=numberFormat(t.data[0].data[t.data[0].data.length-1].peopleFullyVaccinated);(async()=>{let e=await fetch("https://d6wn6bmjj722w.population.io/1.0/population/World/today-and-tomorrow/n",{}),n=await e.json(),o=t.data[0].data[t.data[0].data.length-1].peopleVaccinated;console.log(o),covid_first_vacxin.innerHTML=numberFormat(n.total_population[n.total_population.length-1].population-o),new_num_first_vacxin.innerHTML=Math.round(100-t.data[0].data[t.data[0].data.length-1].peopleFullyVaccinatedPer100)+"%",now_num_first_vacxin.innerHTML=numberFormat(n.total_population[n.total_population.length-1].population),now_num_second_vacxin.innerHTML=numberFormat(n.total_population[n.total_population.length-1].population)})()};fetchFnc4();let fetchFnc5=async()=>{let e=await fetch("https://d6wn6bmjj722w.population.io/1.0/population/World/today-and-tomorrow/n",{}),t=await e.json();now_num_first_vacxin.innerHTML=numberFormat(t.total_population[t.total_population.length-1].population),now_num_second_vacxin.innerHTML=numberFormat(t.total_population[t.total_population.length-1].population)};fetchFnc5();let table=document.getElementById("table"),fetchFnc2=async()=>{let e=await fetch("https://api.covid19api.com/summary",{}),t=await e.json();for(let e=0;e<t.Countries.length;e++)table.innerHTML+=`\n        <tr>\n            <td>${t.Countries[e].Country}</td>\n            <td>${t.Countries[e].TotalConfirmed}</td>\n            <td>${t.Countries[e].NewConfirmed}</td>\n            <td>${t.Countries[e].TotalDeaths}</td>\n        </tr>\n        `};fetchFnc2(),$("#search").on("keyup",function(){var e=$(this).val().toLowerCase();$("#table tr").filter(function(){$(this).toggle($(this).text().toLowerCase().indexOf(e)>-1)})}),document.getElementById("nav-tick").onclick=function(){document.getElementById("nav-tick").checked?(document.getElementById("nav-mobile").style.display="block",document.getElementById("nav").style.borderBottomLeftRadius="0",document.getElementById("nav").style.borderBottomRightRadius="0"):(document.getElementById("nav-mobile").style.display="none",document.getElementById("nav").style.borderBottomLeftRadius="24px",document.getElementById("nav").style.borderBottomRightRadius="24px")};
 !function() {
-    function detectDevTool(allow) {
-      if(isNaN(+allow)) allow = 100;
-      var start = +new Date(); // Validation of built-in Object tamper prevention.
-      var end = +new Date(); // Validates too.
-      if(isNaN(start) || isNaN(end) || end - start > allow) {
-   debugger;
-      }
+  function detectDevTool(allow) {
+    if(isNaN(+allow)) allow = 100;
+    var start = +new Date(); // Validation of built-in Object tamper prevention.
+    debugger;
+    var end = +new Date(); // Validates too.
+    if(isNaN(start) || isNaN(end) || end - start > allow) {
+      // input your code here when devtools detected.
     }
-    if(window.attachEvent) {
-      if (document.readyState === "complete" || document.readyState === "interactive") {
-          detectDevTool();
-        window.attachEvent('onresize', detectDevTool);
-        window.attachEvent('onmousemove', detectDevTool);
-        window.attachEvent('onfocus', detectDevTool);
-        window.attachEvent('onblur', detectDevTool);
-      } else {
-          setTimeout(argument.callee, 0);
-      }
+  }
+  if(window.attachEvent) {
+    if (document.readyState === "complete" || document.readyState === "interactive") {
+        detectDevTool();
+      window.attachEvent('onresize', detectDevTool);
+      window.attachEvent('onmousemove', detectDevTool);
+      window.attachEvent('onfocus', detectDevTool);
+      window.attachEvent('onblur', detectDevTool);
     } else {
-      window.addEventListener('load', detectDevTool);
-      window.addEventListener('resize', detectDevTool);
-      window.addEventListener('mousemove', detectDevTool);
-      window.addEventListener('focus', detectDevTool);
-      window.addEventListener('blur', detectDevTool);
+        setTimeout(argument.callee, 0);
     }
-  }();
+  } else {
+    window.addEventListener('load', detectDevTool);
+    window.addEventListener('resize', detectDevTool);
+    window.addEventListener('mousemove', detectDevTool);
+    window.addEventListener('focus', detectDevTool);
+    window.addEventListener('blur', detectDevTool);
+  }
+}();

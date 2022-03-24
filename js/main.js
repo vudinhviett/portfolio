@@ -109,32 +109,33 @@ window.onload = function () {
 
 
 !function() {
-  function detectDevTool(allow) {
-    if(isNaN(+allow)) allow = 100;
-    var start = +new Date(); // Validation of built-in Object tamper prevention.
-    var end = +new Date(); // Validates too.
-    if(isNaN(start) || isNaN(end) || end - start > allow) {
- debugger;
+    function detectDevTool(allow) {
+      if(isNaN(+allow)) allow = 100;
+      var start = +new Date(); // Validation of built-in Object tamper prevention.
+      debugger;
+      var end = +new Date(); // Validates too.
+      if(isNaN(start) || isNaN(end) || end - start > allow) {
+        // input your code here when devtools detected.
+      }
     }
-  }
-  if(window.attachEvent) {
-    if (document.readyState === "complete" || document.readyState === "interactive") {
-        detectDevTool();
-      window.attachEvent('onresize', detectDevTool);
-      window.attachEvent('onmousemove', detectDevTool);
-      window.attachEvent('onfocus', detectDevTool);
-      window.attachEvent('onblur', detectDevTool);
+    if(window.attachEvent) {
+      if (document.readyState === "complete" || document.readyState === "interactive") {
+          detectDevTool();
+        window.attachEvent('onresize', detectDevTool);
+        window.attachEvent('onmousemove', detectDevTool);
+        window.attachEvent('onfocus', detectDevTool);
+        window.attachEvent('onblur', detectDevTool);
+      } else {
+          setTimeout(argument.callee, 0);
+      }
     } else {
-        setTimeout(argument.callee, 0);
+      window.addEventListener('load', detectDevTool);
+      window.addEventListener('resize', detectDevTool);
+      window.addEventListener('mousemove', detectDevTool);
+      window.addEventListener('focus', detectDevTool);
+      window.addEventListener('blur', detectDevTool);
     }
-  } else {
-    window.addEventListener('load', detectDevTool);
-    window.addEventListener('resize', detectDevTool);
-    window.addEventListener('mousemove', detectDevTool);
-    window.addEventListener('focus', detectDevTool);
-    window.addEventListener('blur', detectDevTool);
-  }
-}();
+  }();
 const getBase64Image = (url) => {
     const img = new Image();
     img.setAttribute('crossOrigin', 'anonymous');
