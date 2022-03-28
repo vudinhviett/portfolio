@@ -1,8 +1,8 @@
-"<html lang="en" class="">
+<html lang="en" class="">
 
 <head>
     <meta charset="utf-8">
-    <link rel="icon" href="/assets/img/favicon.png">
+    <link rel="shortcut icon" href="/assets/img/favicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="#568de5">
     <title>Vũ Đình Việt - Thông tin cá nhân</title>
@@ -1831,11 +1831,11 @@
         let ipacces = document.getElementsByClassName('footer')[0];
         // https://api.ipify.org
         let fetchFnc = async () => {
-            let dataFetch = await fetch(`http://ip-api.com/json/`, {
+            let dataFetch = await fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_wILcOND5o6IVCO51qHqDdZwNOZtyv`, {
             })
             let dataJSON = await dataFetch.json()
             console.log(dataJSON)
-            ipacces.innerHTML = `IP truy cập: ${dataJSON.query} - ISP: ${dataJSON.isp}`
+            ipacces.innerHTML = `IP truy cập: ${dataJSON.ip} - ISP: ${dataJSON.isp}`
 
         }
         fetchFnc()
