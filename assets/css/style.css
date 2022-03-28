@@ -7,6 +7,7 @@
 *, ::before, ::after {
     background-repeat: no-repeat;
     box-sizing: border-box;
+    appearance: none;
 }
 
 html {
@@ -14,7 +15,8 @@ html {
     -webkit-overflow-scrolling: touch;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    -ms-overflow-x: hidden
+    -ms-overflow-x: hidden;
+    transition: .2s;
 }
 
 body, html {
@@ -957,11 +959,13 @@ button:focus {
     overflow: hidden;
     text-align: center;
     z-index: 1106;
-    opacity: 1
+    opacity: 1;
+    transition: .2s;
 }
 
 .preloader>* {
-    min-width: 0
+    min-width: 0;
+    transition: .2s
 }
 
 .preloader__wrap {
