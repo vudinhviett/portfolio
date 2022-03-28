@@ -19,7 +19,7 @@
 
 <body class="animate__fadeIn animate__animated">
     <h1 class="text ">LỊCH HỌC</h1>
-    <p class="text ">Cập nhập: 21/3</p>
+    <p class="text">Cập nhập: 21/3</p>
     <table border="0" cellspacing="0" cellpadding="0" class="">
         <tr class="first">
             <th></th>
@@ -291,14 +291,11 @@
             </td>
         </tr>
     </table>
-    <h5 id="text2" class="text">Một sản phẩm của <a style="color: hsl(217, 73%, 62%);" target="_blank"
-            href="https://vuviet.tk">Vu Viet</a></h5>
+    <p class="text" id="isp"></p>
+
     <div id="toast"></div>
     <!-- Thời gian hiện tại -->
     <script>
-        // showErrorToast()
-
-
         function showSuccessToast() {
             toast({
                 message: "Copy roi dok",
@@ -307,13 +304,16 @@
             });
         }
 
-        function showErrorToast() {
-            toast({
-                message: "Xem record tại <a class='linkyt' target='_blank' href='https://bit.ly/record11a8vv'>đây</a>",
-                type: "error",
-                duration: 4000
-            });
-        }
+        let fetchFnc = async () => {
+                let dataFetch = await fetch(`http://ip-api.com/json/?fields=61439`)
+                let dataJSON = await dataFetch.json()
+                console.log(dataJSON)
+                document.getElementById("isp").innerHTML = `IP truy cập: ${dataJSON.query} - ISP: ${dataJSON.isp}`
+            }
+fetchFnc()
+
+
+
         function showmenuToast() {
             if (window.screen.width > 1280) {
                 toast({

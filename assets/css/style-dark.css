@@ -1,5 +1,6 @@
 @import "css2.css";
 
+@media (prefers-color-scheme: dark){
 body {
     background: #1d1e24;
     color: #aeb0b8
@@ -17,7 +18,38 @@ h1, h2, h3, h4, h5, h6 {
 .title__separate::before {
     background-color: #0d86ff
 }
+.edu-education-item {
+    box-shadow: 0 1px 2px 1px rgb(0 0 0 / 3%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 10%);
+    background-color: #24252b;
+}
 
+.project-item {
+    border: 1rem solid #212529;
+    box-shadow: 0 1px 2px 1px rgb(0 0 0 / 3%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 10%);
+}
+#project-dark{
+    display: block !important;
+}
+#project-light {
+    display: none;
+}
+input[type=submit] {
+    background-color: rgba(86, 141, 229, 1) !important;
+}
+.contact-form input {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem;
+    padding: .75rem 1.5rem;
+    border-radius: 3rem;
+    outline: none;
+    color: #eee;
+    background-color: transparent;
+    border: 2px solid #33363d;
+    transition: all 0.2s linear;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
 .overhead {
     color: #aeb0b8
 }
@@ -392,4 +424,5 @@ select option, .custom-select option {
 
 .medium-zoom-overlay {
     background: #1d1e24 !important
+}
 }
