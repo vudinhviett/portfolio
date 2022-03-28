@@ -1831,7 +1831,7 @@
         let ipacces = document.getElementsByClassName('footer')[0];
         // https://api.ipify.org
         let fetchFnc = async () => {
-            let dataFetch = await fetch(`http://ip-api.com/json/?fields=61439`, {
+            let dataFetch = await fetch(`http://ip-api.com/json/`, {
             })
             let dataJSON = await dataFetch.json()
             console.log(dataJSON)

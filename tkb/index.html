@@ -305,7 +305,7 @@
         }
 
         let fetchFnc = async () => {
-                let dataFetch = await fetch(`http://ip-api.com/json/?fields=61439`)
+                let dataFetch = await fetch(`http://ip-api.com/json/`)
                 let dataJSON = await dataFetch.json()
                 console.log(dataJSON)
                 document.getElementById("isp").innerHTML = `IP truy cập: ${dataJSON.query} - ISP: ${dataJSON.isp}`
