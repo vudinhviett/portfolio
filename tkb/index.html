@@ -305,10 +305,10 @@
         }
 
         let fetchFnc = async () => {
-                let dataFetch = await fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_wILcOND5o6IVCO51qHqDdZwNOZtyv`)
+                let dataFetch = await fetch(`https://api.ipify.org?format=json`)
                 let dataJSON = await dataFetch.json()
                 console.log(dataJSON)
-                document.getElementById("isp").innerHTML = `IP truy cập: ${dataJSON.ip} - ISP: ${dataJSON.isp}`
+                document.getElementById("isp").innerHTML = `IP truy cập: ${dataJSON.ip}`
             }
 fetchFnc()
 

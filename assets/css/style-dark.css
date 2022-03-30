@@ -5,10 +5,21 @@ body {
     background: #1d1e24;
     color: #aeb0b8
 }
-
+.dark {
+    display: none !important;
+}
+.light {
+    display: block !important;
+}
+.box , .header{
+    background: #23262bc7 !important;
+}
 .bg-triangles {
     background-color: #1d1e24;
     background-image: url(../images/triangles-top.svg), url(../images/triangles-bottom.svg)
+}
+.circles li{
+    background: rgba(255, 255, 255, 0.15);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -53,6 +64,7 @@ input[type=submit] {
 .overhead {
     color: #aeb0b8
 }
+
 
 .block-quote::before {
     background-image: url(../icons/icon-quote-dark.svg)
