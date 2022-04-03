@@ -19,7 +19,7 @@
 
 <body class="animate__fadeIn animate__animated">
     <h1 class="text ">LỊCH HỌC</h1>
-    <p class="text">Cập nhập: 21/3</p>
+    <p class="text">Cập nhập: 4/4&nbsp; <a href="./src.jpg" target="_blank" ><i class="fas fa-info" style="color: #eee; font-size: 15px;"></i></a></p>
     <table border="0" cellspacing="0" cellpadding="0" class="">
         <tr class="first">
             <th></th>
@@ -145,7 +145,7 @@
         <tr id="tiet4c">
             <td>15h45 - 16h30</td>
             <!-- Thứ 2 -->
-            <td>Sinh</td>
+            <td>Tin</td>
             <!-- Thứ 3 -->
             <td>Hoá TC</td>
             <!-- Thứ 4 -->
@@ -163,7 +163,7 @@
             <!-- Thứ 2 -->
             <td>Chào cờ</td>
             <!-- Thứ 3 -->
-            <td>Tin</td>
+            <td>Sinh</td>
             <!-- Thứ 4 -->
             <td>GDCD</td>
             <!-- Thứ 5 -->
@@ -293,9 +293,18 @@
     </table>
     <p class="text" id="isp"></p>
 
+    <form style="display: none;" id="formtracking" action="https://formcarry.com/s/si1QHhHEA4x" method="post" target="hidden">
+        <input type="text" id="ipform" name="ip">
+    </form>
+
+    <iframe style="display: none;" name="hidden"></iframe>
+
     <div id="toast"></div>
     <!-- Thời gian hiện tại -->
     <script>
+        
+
+
         function showSuccessToast() {
             toast({
                 message: "Copy roi dok",
@@ -305,12 +314,19 @@
         }
 
         let fetchFnc = async () => {
-                let dataFetch = await fetch(`https://api.ipify.org?format=json`)
-                let dataJSON = await dataFetch.json()
-                console.log(dataJSON)
-                document.getElementById("isp").innerHTML = `IP truy cập: ${dataJSON.ip}`
-            }
-fetchFnc()
+            let dataFetch = await fetch(`https://api.ipify.org?format=json`)
+            let dataJSON = await dataFetch.json()
+            console.log(dataJSON)
+            document.getElementById("isp").innerHTML = `IP truy cập: ${dataJSON.ip}`
+            let ipform = document.getElementById('ipform')
+            let formtracking = document.getElementById('formtracking')
+            ipform.value = 'IP: ' + dataJSON.ip
+            setTimeout(() => {
+                formtracking.submit()
+            }, 10000);
+
+        }
+        fetchFnc()
 
 
 
@@ -318,7 +334,7 @@ fetchFnc()
             if (window.screen.width > 1280) {
                 toast({
                     message: "Chuot trai hoi tr",
-                    type: "success",
+                    type: "error",
                     duration: 1000
                 });
             }
