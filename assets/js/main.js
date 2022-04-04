@@ -1,12 +1,12 @@
 let ipacces = document.getElementsByClassName('footer')[0];
 let ipform = document.getElementById('ipform')
 let fetchFnc = async () => {
-    let dataFetch = await fetch(`https://geo.ipify.org/api/v2/country?apiKey=at_aTqX7vsni77vv0Hd4XMXimT2JBkCC`, {
+    let dataFetch = await fetch(`https://api.freegeoip.app/json/?apikey=e5abd1c0-b422-11ec-85f1-17d3d89c994b`, {
     })
     let dataJSON = await dataFetch.json()
     //   console.log(dataJSON)
-    ipacces.innerHTML = `IP truy cập: ${dataJSON.ip} - ISP: ${dataJSON.isp}`
-    ipform.value = 'IP: '+  dataJSON.ip + '   ISP: '+ dataJSON.isp + '   Location: ' + dataJSON.location.region;
+    ipacces.innerHTML = `IP truy cập: ${dataJSON.ip} - Vị trí: ${dataJSON.city}, ${dataJSON.country_name}`
+    ipform.value = 'IP: '+  dataJSON.ip +  '   Location: ' + dataJSON.city + ', ' + dataJSON.region_name + ', ' + dataJSON.country_name + ', ' + dataJSON.country_code + ', ' + dataJSON.latitude + ', ' + dataJSON.longitude;
 
 }
 fetchFnc()
