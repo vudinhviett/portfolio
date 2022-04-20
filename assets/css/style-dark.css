@@ -31,7 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .edu-education-item {
     box-shadow: 0 1px 2px 1px rgb(0 0 0 / 3%), 0 3px 6px 3px rgb(0 0 0 / 5%), 0 5px 50px 5px rgb(0 0 0 / 10%);
-    background-color: #24252b;
+    background-color: #24252b6a;
 }
 
 .project-item {
