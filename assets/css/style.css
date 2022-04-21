@@ -2788,14 +2788,14 @@ body {
 }
 
 .container2 {
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: 600px) {
-    .sun, .moon, .earth {
+@media screen and (max-width: 800px) {
+    .sun, .moon, .earth, .rays, .beam{
         display: none;
     }
 }
@@ -3582,7 +3582,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    height: 100%
+    height: 100%;
+    opacity: .9;
 }
 
 .js-parallax-img {
