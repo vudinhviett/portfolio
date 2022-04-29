@@ -11,13 +11,62 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
     <title>Lịch học và ID - Vu Viet</title>
-    <meta http-equiv="refresh" content="180">
+    <meta http-equiv="refresh" content="350">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 </head>
 
 
 <body class="animate__fadeIn animate__animated">
+    <div class="container2">
+        <div class="earth">
+            <div class="countries"></div>
+            <div class="countries"></div>
+            <div class="countries"></div>
+            <div class="countries"></div>
+            <div class="countries"></div>
+            <div class="countries"></div>
+            <div class="countries"></div>
+            <div class="eyes">
+                <div class="eyes opened"></div>
+                <div class="eyes closed"></div>
+            </div>
+            <div class="tear"></div>
+        </div>
+        <div class="excited">!</div>
+        <div class="shadow"></div>
+        <div class="moon">
+            <div class="craters"></div>
+            <div class="craters"></div>
+            <div class="craters"></div>
+            <div class="craters"></div>
+            <div class="craters"></div>
+            <div class="eyes"></div>
+        </div>
+        <div class="sun">
+            <div class="left-eye">
+                <div class="left-eyelash"></div>
+            </div>
+            <div class="right-eye">
+                <div class="right-eyelash"></div>
+            </div>
+            <div class="rays">
+                <div class="beam"></div>
+                <div class="beam"></div>
+                <div class="beam"></div>
+                <div class="beam"></div>
+                <div class="beam"></div>
+                <div class="beam"></div>
+                <div class="beam"></div>
+                <div class="beam"></div>
+                <div class="beam"></div>
+                <div class="beam"></div>
+            </div>
+        </div>
+        <div class="stars1"></div>
+        <div class="stars2"></div>
+        <div class="stars3"></div>
+    </div>
     <h1 class="text ">LỊCH HỌC</h1>
     <p class="text">Cập nhập: 4/4</p>
     <table border="0" cellspacing="0" cellpadding="0" class="">
@@ -310,10 +359,10 @@
         }
 
         let fetchFnc = async () => {
-            let dataFetch = await fetch(`https://api.freegeoip.app/json/?apikey=e5abd1c0-b422-11ec-85f1-17d3d89c994b`)
+            let dataFetch = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=da8f3f552d44406c994bd523fdcdb265`)
             let dataJSON = await dataFetch.json()
             console.log(dataJSON)
-            document.getElementById("isp").innerHTML = `IP truy cập: ${dataJSON.ip}. Vị trí: ${dataJSON.city}, ${dataJSON.country_name}`
+            document.getElementById("isp").innerHTML = `IP: ${dataJSON.ip}. Location: ${dataJSON.country_capital}, ${dataJSON.country_name}. ISP: ${dataJSON.isp}`
 
         }
         fetchFnc()
@@ -2030,10 +2079,8 @@
             false
         }
 
-        if (document.getElementsByClassName('current').length != 0) {
+        if (document.getElementsByClassName('current').length = 0) {
             if (document.getElementsByClassName('current')[0].textContent == "") {
-                let a = document.getElementsByClassName('current')[0]
-                a.classList.remove('current')
                 document.title = "Lịch học và ID - Vu Viet"
             } else {
                 false

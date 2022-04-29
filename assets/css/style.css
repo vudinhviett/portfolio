@@ -2795,8 +2795,8 @@ body {
 }
 
 @media screen and (max-width: 800px) {
-    .sun, .moon, .earth, .rays, .beam{
-        display: none;
+    .sun, .moon, .earth, .excited, .shadow, .rays, .beam{
+        display: none !important;
     }
 }
 
