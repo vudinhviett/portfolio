@@ -12,7 +12,7 @@ body {
     display: block !important;
 }
 .box , .header{
-    background: #23262bc7 !important;
+    background: #23262bdf !important;
 }
 .bg-triangles {
     background-color: #1d1e24;
@@ -225,7 +225,7 @@ select option, .custom-select option {
 }
 
 .box {
-    background-color: #23262b;
+    background-color: #23262b ;
     box-shadow: -4px 8px 24px rgba(0, 0, 0, .07)
 }
 
